@@ -1,0 +1,22 @@
+{
+  "stage": "B",
+  "status": "failed",
+  "created_at": "2026-10-29T12:19:16.806311+00:00",
+  "model": "MiniMax-M3.1-Flash",
+  "candidate": "/home/lijx/workspace/oceanbase/powercontext-minimax/minimax/.runs/stage-a/candidate-a0ee321d9f1a",
+  "human_or_codex_repairs": [],
+  "evidence_dir": "/home/lijx/workspace/oceanbase/powercontext-minimax/minimax/.runs/stage-a/evidence/stage-b-a0ee321d9f1a",
+  "error": "MiniMax request timed out (120 seconds; connect 15 seconds); no retry.",
+  "minimax_requests_attempted": 1,
+  "state_receipt": {
+    "backend": "PowerContext 1.4.1 / SQLite",
+    "scope_id": "scp_1d9kfz4na7fwn5b3axwjgqd49z",
+    "scope_name": "ticket-status-filter",
+    "family": "atomic-memory",
+    "artifact_id": "art_7336ff192bf7438cbc3a196f531a0220",
+    "revision": 2,
+    "content_digest": "sha256:38c6ec91907396a9b87b94378762decb2f080d51f293c0327f975368eb23db4d",
+    "client_instance_id": "aae8e1432bad4c4fa981140050975563",
+    "pid": 3950662
+  }
+}

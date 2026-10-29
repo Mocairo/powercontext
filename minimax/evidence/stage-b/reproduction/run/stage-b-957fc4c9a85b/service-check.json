@@ -1,0 +1,22 @@
+{
+  "model": "MiniMax-M3.1-Flash",
+  "final_content": "OK",
+  "usage": {
+    "total_tokens": 218,
+    "prompt_tokens": 207,
+    "completion_tokens": 11
+  },
+  "request": {
+    "model": "MiniMax-M3.1-Flash",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Reply with OK only."
+      }
+    ],
+    "max_tokens": 4096,
+    "stream": false
+  },
+  "call_number": 1,
+  "source": "real_minimax"
+}

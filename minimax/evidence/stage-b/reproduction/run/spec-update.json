@@ -1,0 +1,6 @@
+{
+  "before_sha256": "26f79a6418f584a133c995a67ca2060d91e903041edfc5e411081c8a515681fb",
+  "after_sha256": "a9277ef2709ab4588363f6c7495ea0b2ba025adadc6e97ef1a14b395153e9c2d",
+  "changed_requirement": "STATUS-002",
+  "version": 2
+}

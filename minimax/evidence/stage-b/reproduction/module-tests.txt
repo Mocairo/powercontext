@@ -1,0 +1,12 @@
+............................................                             [100%]
+=============================== warnings summary ===============================
+tests/test_state.py::test_real_powercontext_revisions_and_scope_isolation
+tests/test_state.py::test_real_powercontext_revisions_and_scope_isolation
+tests/test_state.py::test_real_powercontext_revisions_and_scope_isolation
+tests/test_state.py::test_real_powercontext_new_process_reads_and_uses_saved_todo
+tests/test_state.py::test_invalid_state_rejected_before_write
+  /tmp/minimax-stage-b-repro-5ti6qlce/minimax/.venv/lib/python3.12/site-packages/powercontext/builtin/persistence/lexical_projection.py:35: SADeprecationWarning: The Result.tuples() method is deprecated, Row now behaves like a tuple and can unpack types directly. (deprecated since: 2.1.0)
+    versions = dict((await connection.execute(select(LEXICAL_PROJECTION_VERSIONS_TABLE))).tuples().all())
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+44 passed, 5 warnings in 13.00s

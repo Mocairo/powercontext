@@ -1,0 +1,15 @@
+{
+  "command": [
+    "/tmp/minimax-stage-b-repro-5ti6qlce/minimax/.venv/bin/python",
+    "-m",
+    "minimax_sdd.cli",
+    "update-spec",
+    "--run-dir",
+    "/tmp/minimax-stage-b-repro-5ti6qlce/minimax/.runs/final-repro",
+    "--output",
+    "/tmp/minimax-stage-b-repro-5ti6qlce/minimax/.runs/final-repro/evidence/spec-update.json"
+  ],
+  "exit_code": 0,
+  "stdout": "{\n  \"before_sha256\": \"26f79a6418f584a133c995a67ca2060d91e903041edfc5e411081c8a515681fb\",\n  \"after_sha256\": \"a9277ef2709ab4588363f6c7495ea0b2ba025adadc6e97ef1a14b395153e9c2d\",\n  \"changed_requirement\": \"STATUS-002\",\n  \"version\": 2\n}\n",
+  "stderr": ""
+}

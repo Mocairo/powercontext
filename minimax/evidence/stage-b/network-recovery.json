@@ -1,0 +1,13 @@
+{
+  "unauthenticated_probe": {
+    "url": "https://api.minimax.cn/v1",
+    "trust_env": true,
+    "http_status": 301,
+    "elapsed_seconds": 3.84
+  },
+  "previous_probes": {
+    "direct_error": "ConnectTimeout",
+    "proxy_error_before_socks_dependency": "ImportError"
+  },
+  "fix": "Respect existing HTTP(S)/ALL_PROXY environment and install httpx[socks]==0.28.1. Proxy URLs and credentials are not recorded."
+}

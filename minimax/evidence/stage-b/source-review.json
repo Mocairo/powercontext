@@ -1,0 +1,14 @@
+{
+  "reviewer": "Codex independent review agent and primary agent",
+  "result": "passed",
+  "model_output_matches_delivered_code": true,
+  "code_sha256": "77448e765557902f54e1ebbdd52e86db429ba5d5f49137ec30130ec72f87fc55",
+  "business_code_repairs": [],
+  "checks": [
+    "Real ticket data filtering; no test ID hardcoding",
+    "Owner/status AND; stable numeric id order",
+    "Strict status validation; ValueError/CLI exit2",
+    "No extra filesystem, network or subprocess side effects",
+    "Original acceptance tests unchanged from stage A"
+  ]
+}

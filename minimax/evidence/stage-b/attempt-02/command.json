@@ -1,0 +1,4 @@
+{
+  "command": "uv run --locked minimax-sdd stage-b --run-dir .runs/stage-a --output .runs/stage-a/latest-stage-b.json",
+  "exit_code": 0
+}

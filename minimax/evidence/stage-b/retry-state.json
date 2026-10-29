@@ -1,0 +1,98 @@
+{
+  "previous_state": {
+    "code_hash": "a3ff1f4c9e24eea67f0e60842fec1d6fbdaffdbeb835c484a534759de36a7092",
+    "completed": [
+      "specifications_updated_to_v2",
+      "real_database_context_retrieved",
+      "baseline_regression_passed",
+      "target_tests_failed_for_missing_status"
+    ],
+    "evidence": "evidence/stage-b-a0ee321d9f1a",
+    "goal": "Add status filtering to the ticket query CLI and list_tickets, preserving existing list, owner and stable ordering behavior. Implement the current database-retrieved specifications and pass the unchanged target and regression tests.",
+    "stage": "stage_b_failed",
+    "test_results": {
+      "regression": {
+        "errors": 0,
+        "exit_code": 0,
+        "failures": 0,
+        "passed": 9,
+        "skipped": 0,
+        "tests": 9
+      },
+      "target": {
+        "errors": 0,
+        "exit_code": 1,
+        "failures": 20,
+        "passed": 0,
+        "skipped": 0,
+        "tests": 20
+      }
+    },
+    "todo": [
+      "inspect_stage_b_failure_record"
+    ]
+  },
+  "previous_receipt": {
+    "backend": "PowerContext 1.4.1 / SQLite",
+    "scope_id": "scp_1d9kfz4na7fwn5b3axwjgqd49z",
+    "scope_name": "ticket-status-filter",
+    "family": "atomic-memory",
+    "artifact_id": "art_7336ff192bf7438cbc3a196f531a0220",
+    "revision": 2,
+    "content_digest": "sha256:38c6ec91907396a9b87b94378762decb2f080d51f293c0327f975368eb23db4d",
+    "client_instance_id": "11299e74c5684f2f8e3ff8a5518fcdec",
+    "pid": 4006250
+  },
+  "state": {
+    "code_hash": "a3ff1f4c9e24eea67f0e60842fec1d6fbdaffdbeb835c484a534759de36a7092",
+    "completed": [
+      "specifications_updated_to_v2",
+      "real_database_context_retrieved",
+      "baseline_regression_passed",
+      "target_tests_failed_for_missing_status"
+    ],
+    "evidence": "evidence/stage-b-a0ee321d9f1a",
+    "goal": "Add status filtering to the ticket query CLI and list_tickets, preserving existing list, owner and stable ordering behavior. Implement the current database-retrieved specifications and pass the unchanged target and regression tests.",
+    "stage": "awaiting_minimax",
+    "test_results": {
+      "regression": {
+        "errors": 0,
+        "exit_code": 0,
+        "failures": 0,
+        "passed": 9,
+        "skipped": 0,
+        "tests": 9
+      },
+      "target": {
+        "errors": 0,
+        "exit_code": 1,
+        "failures": 20,
+        "passed": 0,
+        "skipped": 0,
+        "tests": 20
+      }
+    },
+    "todo": [
+      "call_minimax",
+      "run_unchanged_target_and_regression_tests",
+      "review_acceptance_report"
+    ],
+    "recovery_history": [
+      {
+        "failed_evidence": "evidence/stage-b-a0ee321d9f1a",
+        "action": "Enabled existing environment proxy and installed SOCKS support after confirmed direct connection timeout; retry authorized by user."
+      }
+    ]
+  },
+  "receipt": {
+    "backend": "PowerContext 1.4.1 / SQLite",
+    "scope_id": "scp_1d9kfz4na7fwn5b3axwjgqd49z",
+    "scope_name": "ticket-status-filter",
+    "family": "atomic-memory",
+    "artifact_id": "art_7336ff192bf7438cbc3a196f531a0220",
+    "revision": 3,
+    "content_digest": "sha256:941cffaded6522fc8658376fa9a980c0bf82e919f2f2029bf3ad52d8c7150615",
+    "client_instance_id": "11299e74c5684f2f8e3ff8a5518fcdec",
+    "pid": 4006250
+  }
+}

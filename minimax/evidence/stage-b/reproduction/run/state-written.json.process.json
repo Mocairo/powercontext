@@ -1,0 +1,15 @@
+{
+  "command": [
+    "/tmp/minimax-stage-b-repro-5ti6qlce/minimax/.venv/bin/python",
+    "-m",
+    "minimax_sdd.cli",
+    "state-save",
+    "--run-dir",
+    "/tmp/minimax-stage-b-repro-5ti6qlce/minimax/.runs/final-repro",
+    "--output",
+    "/tmp/minimax-stage-b-repro-5ti6qlce/minimax/.runs/final-repro/evidence/state-written.json"
+  ],
+  "exit_code": 0,
+  "stdout": "{\n  \"previous_state\": null,\n  \"state\": {\n    \"goal\": \"Add status filtering to the ticket query CLI and list_tickets, preserving existing list, owner and stable ordering behavior. Implement the current database-retrieved specifications and pass the unchanged target and regression tests.\",\n    \"stage\": \"awaiting_minimax\",\n    \"completed\": [\n      \"specifications_updated_to_v2\",\n      \"real_database_context_retrieved\",\n      \"baseline_regression_passed\",\n      \"target_tests_failed_for_missing_status\"\n    ],\n    \"todo\": [\n      \"call_minimax\",\n      \"run_unchanged_target_and_regression_tests\",\n      \"review_acceptance_report\"\n    ],\n    \"test_results\": {\n      \"regression\": {\n        \"exit_code\": 0,\n        \"tests\": 9,\n        \"passed\": 9,\n        \"failures\": 0,\n        \"errors\": 0,\n        \"skipped\": 0\n      },\n      \"target\": {\n        \"exit_code\": 1,\n        \"tests\": 20,\n        \"passed\": 0,\n        \"failures\": 20,\n        \"errors\": 0,\n        \"skipped\": 0\n      }\n    },\n    \"code_hash\": \"a3ff1f4c9e24eea67f0e60842fec1d6fbdaffdbeb835c484a534759de36a7092\"\n  },\n  \"receipt\": {\n    \"backend\": \"PowerContext 1.4.1 / SQLite\",\n    \"scope_id\": \"scp_5qzjmzgfr9tv6bymdngtd7zx4g\",\n    \"scope_name\": \"ticket-status-filter\",\n    \"family\": \"atomic-memory\",\n    \"artifact_id\": \"art_349b243e671d4543bc44edede7297f41\",\n    \"revision\": 1,\n    \"content_digest\": \"sha256:879268e2c1356a126bd67426c5feea5d315eb3f4569dc7238ddd0dbd860b55d0\",\n    \"client_instance_id\": \"f2d1d4ec79fc4d65b625ca532ad5bf5d\",\n    \"pid\": 4076857\n  }\n}\n",
+  "stderr": ""
+}

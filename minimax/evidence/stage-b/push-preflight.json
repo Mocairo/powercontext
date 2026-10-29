@@ -1,0 +1,8 @@
+{
+  "command": "GIT_TERMINAL_PROMPT=0 timeout 40 git push --dry-run origin HEAD:refs/heads/codex/minimax-sdd",
+  "origin": "https://github.com/Mocairo/powercontext.git",
+  "exit_code": 128,
+  "stderr": "fatal: could not read Username for 'https://github.com': terminal prompts disabled",
+  "push_performed": false,
+  "recovery": "Configure GitHub authentication and run git push -u origin codex/minimax-sdd; verify remote SHA with git ls-remote. Do not force push."
+}

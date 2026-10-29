@@ -1,50 +1,47 @@
-# 阶段 A 验收对照
+# 本地验收对照
 
-**阶段 A 已完成；整题未完成，未提测。** 官方要求六项全部通过才得 20 分。下面不代表平台评测通过或得分，真实 MiniMax 参与和修改后全绿仍待阶段 B。官方依据见 [题面核对](evidence/task-requirements.md)。
+**六项条件已有本地运行证据；平台提测及官方评分尚未执行。** MiniMax 已真实参与状态筛选修改，初始与修改后使用同一份验收测试。官方要求六项全部通过才得 20 分，本地结果不保证官方得分。依据见[题面核对](evidence/task-requirements.md)。
 
-| 官方必做项 | 当前状态 | 证据与未完成部分 |
+| 官方必做项 | 当前本地状态 | 证据 |
 | --- | --- | --- |
-| 能够运行 | 阶段 A 已验证，完整流程待 B | 新目录、新虚拟环境和新数据范围按 README 安装及执行成功；[复现证据](evidence/reproduction/)。 |
-| MiniMax 实际参与 | 待阶段 B | 适配器与 fixture 不是实际参与；需真实请求、上下文、模型最终代码及对应差异。 |
-| 上下文正确 | 阶段 A 已验证 | [v1](evidence/stage-a/context-v1.json) → [v2](evidence/stage-a/context-v2.json)：真实来源完整，STATUS-002 更新为 v2，旧规则不混入。 |
-| 数据库实际参与 | 阶段 A 已验证 | [实际上下文和 SQL](evidence/stage-a/context-v2.json)包含真实 seekdb 查询、返回结果、数据库版本与来源。 |
-| 状态能够复用 | 阶段 A 已验证 | [写入](evidence/stage-a/state-written.json)与[重启恢复](evidence/stage-a/context-restored.json)：新进程、新客户端读同一 artifact，并选择 call_minimax。 |
-| 代码修改有效 | 修改前已验证，修改后待 B | 初始版本回归 9 passed，目标 20 项有效失败；同一测试修改后全绿尚未验证。 |
+| 能够运行 | 已验证 | 新的源码目录、虚拟环境及数据范围中，完整 A→B 与新进程恢复均退出 0；[完整复现](evidence/stage-b/reproduction/)。 |
+| MiniMax 实际参与 | 已验证 | `MiniMax-M3.1-Flash` 的[实际任务与上下文](evidence/stage-b/attempt-02/context.json)、[模型最终输出](evidence/stage-b/attempt-02/minimax-final-output.json)、[对应差异](evidence/stage-b/attempt-02/model.patch)。 |
+| 上下文正确 | 已验证 | [v1](evidence/stage-a/context-v1.json) → [v2](evidence/stage-a/context-v2.json)，实际请求使用当前规格和必要代码/测试来源。 |
+| 数据库实际参与 | 已验证 | [阶段 B 上下文](evidence/stage-b/attempt-02/context.json)包含真实 seekdb SQL、返回资料、版本和来源；修改后重新导入候选代码。 |
+| 状态能够复用 | 已验证 | [阶段 A 恢复](evidence/stage-a/context-restored.json)选择模型调用；[阶段 B 新进程恢复](evidence/stage-b/restart-verification.json)读取 revision 4 并选择验收审查。 |
+| 代码修改有效 | 已验证 | 修改前目标 20 项有效失败；修改后目标 20/20、回归 9/9 全部通过，0 errors、0 skipped，[固定测试哈希与结果](evidence/stage-b/tests-after/results.json)。 |
 
-## 实际验证结果
+## 实际执行
 
-| 实际命令/验证 | 结果 | 退出码 | 证据 |
+| 命令/验证 | 结果 | 退出码 | 证据 |
 | --- | --- | --- | --- |
-| `uv run --locked pytest -q` | 44 passed；5 条上游 SQLAlchemy 警告，无失败 | 0 | [日志](evidence/module-tests.txt)、[命令](evidence/module-tests-command.json) |
-| 完整 `stage-a --run-dir .runs/stage-a` | 真实导入/检索、规格更新、基线和状态重启全部通过；模型请求 0 | 0 | [报告](evidence/stage-a/report.json) |
-| 回归测试（固定 `test_regression.py`） | 9 passed，0 errors，0 skipped | 0 | [命令、哈希与计数](evidence/stage-a/baseline/results.json) |
-| 目标测试（固定 `test_target.py`） | 20 failed，0 errors，0 skipped；缺少状态功能导致的有效失败 | 1 | [日志](evidence/stage-a/baseline/target.stdout.txt) |
-| 新目录 `uv sync --locked --python 3.12` | 全新虚拟环境按锁文件安装成功 | 0 | [复现证据](evidence/reproduction/) |
-| 新目录 `uv run --locked minimax-sdd stage-a --run-dir .runs/demo-final` | 全新演示数据范围再次完成阶段 A | 0 | [复现证据](evidence/reproduction/) |
-| 无凭据执行阶段 B | 明确提示缺配置，无网络请求，无伪模型记录 | 2 | [缺配置记录](evidence/missing-config.json) |
+| 阶段 A `uv run --locked pytest -q` | 44 passed，5 条上游弃用警告 | 0 | [原始模块日志](evidence/module-tests.txt) |
+| `stage-a --run-dir .runs/stage-a` | 真实导入/检索、规格更新、初始测试与跨进程复用通过 | 0 | [阶段 A 报告](evidence/stage-a/report.json) |
+| 初始回归 / 目标测试 | 9 passed / 20 项有效失败 | 0 / 1 | [初始结果](evidence/stage-a/baseline/results.json) |
+| 首次真实 `stage-b` | 预检直连超时，未生成业务代码；请求尝试 1 次 | 1 | [失败记录](evidence/stage-b/attempt-01/report.json) |
+| 代理修复后真实 `stage-b` | 真实预检和生成成功；目标 20/20、回归 9/9 | 0 | [执行命令](evidence/stage-b/attempt-02/command.json)、[报告](evidence/stage-b/attempt-02/report.json) |
+| 新目录 `uv run --locked pytest -q` | 最终接入代码 44 passed，5 条上游警告 | 0 | [新环境日志](evidence/stage-b/reproduction/) |
+| 新目录 `DEMO_WORKSPACE="$PWD/demo/after" uv run --locked pytest -q demo/tests` | 已交付模型代码 29 passed | 0 | [新环境业务日志](evidence/stage-b/reproduction/) |
+| 新目录 `stage-a --run-dir .runs/final-repro` → `stage-b --run-dir .runs/final-repro` → 新进程 `query` | 第二次独立真实生成同样通过目标 20 + 回归 9，恢复状态选择验收审查 | 均为 0 | [完整复现证据](evidence/stage-b/reproduction/) |
+| 新进程 `query --run-dir .runs/stage-a` | 从 PowerContext 读取候选代码对应 revision 4，下一步为 `review_acceptance_report` | 0 | [恢复校验](evidence/stage-b/restart-verification.json) |
 
-初始业务代码 SHA256：
-`a3ff1f4c9e24eea67f0e60842fec1d6fbdaffdbeb835c484a534759de36a7092`
+完整 pytest 命令、工作目录、退出码及代码/测试哈希保存在各 `results.json`；没有删除断言、跳过测试或调整预期。
 
-真实数据库返回版本：`5.7.25-OceanBase seekdb-v1.4.0.0`。工程资料由真实 seekdb 保存并查询；PowerContext 使用独立 SQLite 持久后端，两者职责没有混淆。
+## 代码与贡献来源
 
-状态写进程 PID `3714950`，读进程 PID `3715772`，客户端实例 ID 不同；两者使用同一 scope 下的 `art_7336ff192bf7438cbc3a196f531a0220@1` 和相同内容摘要。恢复状态直接用于上下文和下一步 `call_minimax`，没有从 JSON 证据或进程缓存恢复。
+- 初始代码 SHA256：`a3ff1f4c9e24eea67f0e60842fec1d6fbdaffdbeb835c484a534759de36a7092`。
+- 交付代码 SHA256：`77448e765557902f54e1ebbdd52e86db429ba5d5f49137ec30130ec72f87fc55`。
+- [交付业务文件](demo/after/ticket_tool.py)与真实响应中的 `files["ticket_tool.py"]` 逐字一致，[源码复核](evidence/stage-b/source-review.json)确认按实际工单数据筛选、未针对测试 ID 硬编码，无额外文件、网络或进程副作用。
+- 业务修改由 MiniMax 生成，无后续人工修补。Codex 完成上下文模块、固定测试、调用和补丁工具，以及此次环境代理接入修复。
 
-目标失败均因 CLI 不识别 `--status`、函数不接受 `status` 或缺少规定的非法状态提示，不是依赖、导入或启动错误。验收文件内容哈希一致，没有 skip/xfail，也没有在阶段 A 实现目标功能。
+真实工程检索数据库返回版本为 `5.7.25-OceanBase seekdb-v1.4.0.0`；PowerContext 1.4.1 另用专用 SQLite 持久后端。阶段 B 写入同一 scope 中的 artifact `art_7336ff192bf7438cbc3a196f531a0220@4`，新进程读取时客户端 ID 和 PID 不同，内容摘要及代码哈希一致。JSON 证据没有被用作状态恢复缓存。
 
-## 当前限制与已解决问题
+源码审查和完整复现完成后，已将真实完成情况写入 [revision 5](evidence/stage-b/final-state-written.json)，并由另一个新进程[读取和使用](evidence/stage-b/context-final.json)：阶段 `local_acceptance_complete`，下一步 `submit_on_competition_platform`。汇总见[最终本地验收报告](evidence/stage-b/final-acceptance.json)。平台提测仍由参赛者执行。
 
-- MiniMax 凭据文件尚不存在，属于本阶段预期条件，不阻塞阶段 A；本轮未等待或轮询套餐。
-- PowerContext 1.4.1 要求 PyMySQL `>=1.2,<1.2.1`；最初尝试 1.1.2 的依赖冲突已通过固定 1.2.0 解决，最终锁定环境及干净安装通过。
-- 5 条 SQLAlchemy 上游警告未导致测试失败；原始日志保留。没有其他已知运行阻塞。
-- `origin` 已确认是 `Mocairo/powercontext`；推送 dry-run 退出 128，提示无法读取 GitHub 用户名（终端提示禁用）。认证不可用，本分支尚未推送。未强推、未向官方仓库推送。
+## 已解决问题与交付边界
 
-## 阶段 B 必须补齐
+首次直连 MiniMax 超时。独立无认证探测确认本机需要既有代理，且原 HTTPX 环境缺少 SOCKS 支持；修复为遵循环境代理并安装 `httpx[socks]==0.28.1`（锁定 `socksio==1.0.0`）。[网络诊断](evidence/stage-b/network-recovery.json)和[恢复状态](evidence/stage-b/retry-state.json)保留失败后显式恢复过程，未覆盖首次记录。每次运行最多预检加生成两次请求，无静默自动重试。首次尝试失败 1 次；主运行成功预检和生成 2 次；新目录独立复现又成功预检和生成 2 次。共 5 次客户端请求尝试、4 个成功响应，其中 2 次实际代码生成。新目录生成结果也通过同一套 29 项测试；交付快照保留主运行版本，不要求不同模型调用返回相同文本。
 
-1. 配置仓库外 MiniMax 凭据，验证真实服务并生成业务修改。
-2. 保留脱敏任务上下文、模型标识、模型最终代码、补丁应用结果和差异。
-3. 同一套目标及回归测试修改后全部通过，保留命令、退出码和版本。
-4. 将真实结果写入 PowerContext，生成最终完整验收报告。
-5. 若需后续人工修复，独立记录贡献来源，不覆盖模型原始最终输出。
+阶段 A 的[缺配置记录](evidence/missing-config.json)仅说明当时缺配置时零请求退出，目前已具备真实调用证据。上游 SQLAlchemy 弃用警告不影响测试结果。
 
-本机已验证运行目录为 `.runs/stage-a`；新环境按 README 创建的是 `.runs/demo-a`。后续命令应选对应目录。比赛平台提测由参赛者操作。
+GitHub `origin` 正确，但 HTTPS 认证预检仍退出 128（无法读取用户名，终端提示禁用），尚未推送。官方提测由参赛者执行；本地成功不等同于远程可见、平台通过或保证得分。

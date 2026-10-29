@@ -1,0 +1,49 @@
+# 阶段 B 实际执行报告
+
+{
+  "stage": "B",
+  "status": "tests_passed_pending_review",
+  "created_at": "2026-10-29T12:28:05.105375+00:00",
+  "model": "MiniMax-M3.1-Flash",
+  "candidate": "/home/lijx/workspace/oceanbase/powercontext-minimax/minimax/.runs/stage-a/candidate-8e19297720ce",
+  "human_or_codex_repairs": [],
+  "evidence_dir": "/home/lijx/workspace/oceanbase/powercontext-minimax/minimax/.runs/stage-a/evidence/stage-b-8e19297720ce",
+  "tests": {
+    "regression": {
+      "exit_code": 0,
+      "tests": 9,
+      "passed": 9,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "target": {
+      "exit_code": 0,
+      "tests": 20,
+      "passed": 20,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  },
+  "code_sha256": "77448e765557902f54e1ebbdd52e86db429ba5d5f49137ec30130ec72f87fc55",
+  "test_sha256": {
+    "tests/conftest.py": "0146973a18b2d21f5a2e4d4de56383d17c06f03cfbd37e9fddea06af4a333e91",
+    "tests/test_regression.py": "94ad7bd4346a5589c9e78d165d3e5970802a9858c31824c4c814b4ee7fb0508c",
+    "tests/test_target.py": "d4340e834370559ae885ef09a2fedab5dfb96bbaffe299288fdd04dc39403545"
+  },
+  "minimax_requests_attempted": 2,
+  "state_receipt": {
+    "backend": "PowerContext 1.4.1 / SQLite",
+    "scope_id": "scp_1d9kfz4na7fwn5b3axwjgqd49z",
+    "scope_name": "ticket-status-filter",
+    "family": "atomic-memory",
+    "artifact_id": "art_7336ff192bf7438cbc3a196f531a0220",
+    "revision": 4,
+    "content_digest": "sha256:9a3e33995c667175cf188dd5eb9ef81df2a60fa3a47c1af87ae79f5762020a86",
+    "client_instance_id": "76d0e96e2e7144529aea843faba027b8",
+    "pid": 4013299
+  }
+}
+
+平台提测由参赛者操作；请审查模型差异和测试证据。

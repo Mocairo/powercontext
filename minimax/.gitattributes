@@ -1,3 +1,4 @@
-# Preserve raw pytest stdout and JUnit evidence, including diagnostic whitespace.
+# Preserve raw test diagnostics and unified diffs, including context whitespace.
 evidence/**/*.txt -whitespace
 evidence/**/*.xml -whitespace
+evidence/**/*.patch -whitespace

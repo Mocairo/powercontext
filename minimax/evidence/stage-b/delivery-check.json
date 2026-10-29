@@ -1,0 +1,7 @@
+{
+  "credential_value_absent": true,
+  "delivered_files_scanned": 176,
+  "model_private_reasoning_not_exported": true,
+  "baseline_and_acceptance_files_unchanged_from": "183de7b8dc2a39194b60c195b0e8199c094a1d79",
+  "verification": "Compared actual configured key in memory against deliverable file bytes without displaying key; checked exported final model records; git diff confirmed immutable initial code and acceptance tests."
+}

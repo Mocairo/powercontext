@@ -79,7 +79,7 @@ class MiniMaxClient:
             raise MiniMaxError('MiniMax request exceeds 256000-byte context limit.')
         self.calls += 1
         try:
-            with httpx.Client(timeout=httpx.Timeout(120, connect=15), transport=self.transport, follow_redirects=False, trust_env=False) as client:
+            with httpx.Client(timeout=httpx.Timeout(120, connect=15), transport=self.transport, follow_redirects=False, trust_env=True) as client:
                 with client.stream('POST', self.config.base_url.rstrip('/') + '/chat/completions', headers={'Authorization': 'Bearer ' + self.config.api_key}, json=body) as response:
                     if response.status_code in (401, 403):
                         raise MiniMaxError('MiniMax authentication/permission failed; verify the subscription key, region and model.')

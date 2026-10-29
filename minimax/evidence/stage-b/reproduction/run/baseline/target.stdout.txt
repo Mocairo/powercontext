@@ -1,0 +1,177 @@
+FFFFFFFFFFFFFFFFFFFF                                                     [100%]
+=================================== FAILURES ===================================
+____________________ test_each_valid_status[open-expected0] ____________________
+../../../demo/tests/test_target.py:17: in test_each_valid_status
+    assert ids(run_cli("--status", status)) == expected
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../../../demo/tests/test_target.py:8: in ids
+    assert result.returncode == 0, result.stderr
+E   AssertionError: usage: ticket_tool.py [-h] [--owner OWNER]
+E     ticket_tool.py: error: unrecognized arguments: --status open
+E     
+E   assert 2 == 0
+E    +  where 2 = CompletedProcess(args=['/tmp/minimax-stage-b-repro-5ti6qlce/minimax/.venv/bin/python', '/tmp/minimax-stage-b-repro-5ti...', stderr='usage: ticket_tool.py [-h] [--owner OWNER]\nticket_tool.py: error: unrecognized arguments: --status open\n').returncode
+________________ test_each_valid_status[in_progress-expected1] _________________
+../../../demo/tests/test_target.py:17: in test_each_valid_status
+    assert ids(run_cli("--status", status)) == expected
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../../../demo/tests/test_target.py:8: in ids
+    assert result.returncode == 0, result.stderr
+E   AssertionError: usage: ticket_tool.py [-h] [--owner OWNER]
+E     ticket_tool.py: error: unrecognized arguments: --status in_progress
+E     
+E   assert 2 == 0
+E    +  where 2 = CompletedProcess(args=['/tmp/minimax-stage-b-repro-5ti6qlce/minimax/.venv/bin/python', '/tmp/minimax-stage-b-repro-5ti...rr='usage: ticket_tool.py [-h] [--owner OWNER]\nticket_tool.py: error: unrecognized arguments: --status in_progress\n').returncode
+___________________ test_each_valid_status[closed-expected2] ___________________
+../../../demo/tests/test_target.py:17: in test_each_valid_status
+    assert ids(run_cli("--status", status)) == expected
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../../../demo/tests/test_target.py:8: in ids
+    assert result.returncode == 0, result.stderr
+E   AssertionError: usage: ticket_tool.py [-h] [--owner OWNER]
+E     ticket_tool.py: error: unrecognized arguments: --status closed
+E     
+E   assert 2 == 0
+E    +  where 2 = CompletedProcess(args=['/tmp/minimax-stage-b-repro-5ti6qlce/minimax/.venv/bin/python', '/tmp/minimax-stage-b-repro-5ti... stderr='usage: ticket_tool.py [-h] [--owner OWNER]\nticket_tool.py: error: unrecognized arguments: --status closed\n').returncode
+_________________ test_combined_filters[alice-open-expected0] __________________
+../../../demo/tests/test_target.py:26: in test_combined_filters
+    assert ids(run_cli("--owner", owner, "--status", status)) == expected
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../../../demo/tests/test_target.py:8: in ids
+    assert result.returncode == 0, result.stderr
+E   AssertionError: usage: ticket_tool.py [-h] [--owner OWNER]
+E     ticket_tool.py: error: unrecognized arguments: --status open
+E     
+E   assert 2 == 0
+E    +  where 2 = CompletedProcess(args=['/tmp/minimax-stage-b-repro-5ti6qlce/minimax/.venv/bin/python', '/tmp/minimax-stage-b-repro-5ti...', stderr='usage: ticket_tool.py [-h] [--owner OWNER]\nticket_tool.py: error: unrecognized arguments: --status open\n').returncode
+______________ test_combined_filters[alice-in_progress-expected1] ______________
+../../../demo/tests/test_target.py:26: in test_combined_filters
+    assert ids(run_cli("--owner", owner, "--status", status)) == expected
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../../../demo/tests/test_target.py:8: in ids
+    assert result.returncode == 0, result.stderr
+E   AssertionError: usage: ticket_tool.py [-h] [--owner OWNER]
+E     ticket_tool.py: error: unrecognized arguments: --status in_progress
+E     
+E   assert 2 == 0
+E    +  where 2 = CompletedProcess(args=['/tmp/minimax-stage-b-repro-5ti6qlce/minimax/.venv/bin/python', '/tmp/minimax-stage-b-repro-5ti...rr='usage: ticket_tool.py [-h] [--owner OWNER]\nticket_tool.py: error: unrecognized arguments: --status in_progress\n').returncode
+________________ test_combined_filters[alice-closed-expected2] _________________
+../../../demo/tests/test_target.py:26: in test_combined_filters
+    assert ids(run_cli("--owner", owner, "--status", status)) == expected
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../../../demo/tests/test_target.py:8: in ids
+    assert result.returncode == 0, result.stderr
+E   AssertionError: usage: ticket_tool.py [-h] [--owner OWNER]
+E     ticket_tool.py: error: unrecognized arguments: --status closed
+E     
+E   assert 2 == 0
+E    +  where 2 = CompletedProcess(args=['/tmp/minimax-stage-b-repro-5ti6qlce/minimax/.venv/bin/python', '/tmp/minimax-stage-b-repro-5ti... stderr='usage: ticket_tool.py [-h] [--owner OWNER]\nticket_tool.py: error: unrecognized arguments: --status closed\n').returncode
+_________________ test_combined_filters[bob-closed-expected3] __________________
+../../../demo/tests/test_target.py:26: in test_combined_filters
+    assert ids(run_cli("--owner", owner, "--status", status)) == expected
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../../../demo/tests/test_target.py:8: in ids
+    assert result.returncode == 0, result.stderr
+E   AssertionError: usage: ticket_tool.py [-h] [--owner OWNER]
+E     ticket_tool.py: error: unrecognized arguments: --status closed
+E     
+E   assert 2 == 0
+E    +  where 2 = CompletedProcess(args=['/tmp/minimax-stage-b-repro-5ti6qlce/minimax/.venv/bin/python', '/tmp/minimax-stage-b-repro-5ti... stderr='usage: ticket_tool.py [-h] [--owner OWNER]\nticket_tool.py: error: unrecognized arguments: --status closed\n').returncode
+_________________ test_combined_filters[nobody-open-expected4] _________________
+../../../demo/tests/test_target.py:26: in test_combined_filters
+    assert ids(run_cli("--owner", owner, "--status", status)) == expected
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../../../demo/tests/test_target.py:8: in ids
+    assert result.returncode == 0, result.stderr
+E   AssertionError: usage: ticket_tool.py [-h] [--owner OWNER]
+E     ticket_tool.py: error: unrecognized arguments: --status open
+E     
+E   assert 2 == 0
+E    +  where 2 = CompletedProcess(args=['/tmp/minimax-stage-b-repro-5ti6qlce/minimax/.venv/bin/python', '/tmp/minimax-stage-b-repro-5ti...', stderr='usage: ticket_tool.py [-h] [--owner OWNER]\nticket_tool.py: error: unrecognized arguments: --status open\n').returncode
+____________________ test_invalid_status_is_explicit[OPEN] _____________________
+../../../demo/tests/test_target.py:34: in test_invalid_status_is_explicit
+    assert "invalid status" in result.stderr.lower()
+E   AssertionError: assert 'invalid status' in 'usage: ticket_tool.py [-h] [--owner owner]\nticket_tool.py: error: unrecognized arguments: --status open\n'
+E    +  where 'usage: ticket_tool.py [-h] [--owner owner]\nticket_tool.py: error: unrecognized arguments: --status open\n' = <built-in method lower of str object at 0x76e2622726f0>()
+E    +    where <built-in method lower of str object at 0x76e2622726f0> = 'usage: ticket_tool.py [-h] [--owner OWNER]\nticket_tool.py: error: unrecognized arguments: --status OPEN\n'.lower
+E    +      where 'usage: ticket_tool.py [-h] [--owner OWNER]\nticket_tool.py: error: unrecognized arguments: --status OPEN\n' = CompletedProcess(args=['/tmp/minimax-stage-b-repro-5ti6qlce/minimax/.venv/bin/python', '/tmp/minimax-stage-b-repro-5ti...', stderr='usage: ticket_tool.py [-h] [--owner OWNER]\nticket_tool.py: error: unrecognized arguments: --status OPEN\n').stderr
+___________________ test_invalid_status_is_explicit[unknown] ___________________
+../../../demo/tests/test_target.py:34: in test_invalid_status_is_explicit
+    assert "invalid status" in result.stderr.lower()
+E   AssertionError: assert 'invalid status' in 'usage: ticket_tool.py [-h] [--owner owner]\nticket_tool.py: error: unrecognized arguments: --status unknown\n'
+E    +  where 'usage: ticket_tool.py [-h] [--owner owner]\nticket_tool.py: error: unrecognized arguments: --status unknown\n' = <built-in method lower of str object at 0x76e262272970>()
+E    +    where <built-in method lower of str object at 0x76e262272970> = 'usage: ticket_tool.py [-h] [--owner OWNER]\nticket_tool.py: error: unrecognized arguments: --status unknown\n'.lower
+E    +      where 'usage: ticket_tool.py [-h] [--owner OWNER]\nticket_tool.py: error: unrecognized arguments: --status unknown\n' = CompletedProcess(args=['/tmp/minimax-stage-b-repro-5ti6qlce/minimax/.venv/bin/python', '/tmp/minimax-stage-b-repro-5ti...stderr='usage: ticket_tool.py [-h] [--owner OWNER]\nticket_tool.py: error: unrecognized arguments: --status unknown\n').stderr
+______________________ test_invalid_status_is_explicit[] _______________________
+../../../demo/tests/test_target.py:34: in test_invalid_status_is_explicit
+    assert "invalid status" in result.stderr.lower()
+E   AssertionError: assert 'invalid status' in 'usage: ticket_tool.py [-h] [--owner owner]\nticket_tool.py: error: unrecognized arguments: --status \n'
+E    +  where 'usage: ticket_tool.py [-h] [--owner owner]\nticket_tool.py: error: unrecognized arguments: --status \n' = <built-in method lower of str object at 0x76e26226f090>()
+E    +    where <built-in method lower of str object at 0x76e26226f090> = 'usage: ticket_tool.py [-h] [--owner OWNER]\nticket_tool.py: error: unrecognized arguments: --status \n'.lower
+E    +      where 'usage: ticket_tool.py [-h] [--owner OWNER]\nticket_tool.py: error: unrecognized arguments: --status \n' = CompletedProcess(args=['/tmp/minimax-stage-b-repro-5ti6qlce/minimax/.venv/bin/python', '/tmp/minimax-stage-b-repro-5ti...ut='', stderr='usage: ticket_tool.py [-h] [--owner OWNER]\nticket_tool.py: error: unrecognized arguments: --status \n').stderr
+____________________ test_invalid_status_is_explicit[ open] ____________________
+../../../demo/tests/test_target.py:34: in test_invalid_status_is_explicit
+    assert "invalid status" in result.stderr.lower()
+E   AssertionError: assert 'invalid status' in 'usage: ticket_tool.py [-h] [--owner owner]\nticket_tool.py: error: unrecognized arguments: --status  open\n'
+E    +  where 'usage: ticket_tool.py [-h] [--owner owner]\nticket_tool.py: error: unrecognized arguments: --status  open\n' = <built-in method lower of str object at 0x76e262272f10>()
+E    +    where <built-in method lower of str object at 0x76e262272f10> = 'usage: ticket_tool.py [-h] [--owner OWNER]\nticket_tool.py: error: unrecognized arguments: --status  open\n'.lower
+E    +      where 'usage: ticket_tool.py [-h] [--owner OWNER]\nticket_tool.py: error: unrecognized arguments: --status  open\n' = CompletedProcess(args=['/tmp/minimax-stage-b-repro-5ti6qlce/minimax/.venv/bin/python', '/tmp/minimax-stage-b-repro-5ti..., stderr='usage: ticket_tool.py [-h] [--owner OWNER]\nticket_tool.py: error: unrecognized arguments: --status  open\n').stderr
+____________________ test_invalid_status_is_explicit[open ] ____________________
+../../../demo/tests/test_target.py:34: in test_invalid_status_is_explicit
+    assert "invalid status" in result.stderr.lower()
+E   AssertionError: assert 'invalid status' in 'usage: ticket_tool.py [-h] [--owner owner]\nticket_tool.py: error: unrecognized arguments: --status open \n'
+E    +  where 'usage: ticket_tool.py [-h] [--owner owner]\nticket_tool.py: error: unrecognized arguments: --status open \n' = <built-in method lower of str object at 0x76e2622732d0>()
+E    +    where <built-in method lower of str object at 0x76e2622732d0> = 'usage: ticket_tool.py [-h] [--owner OWNER]\nticket_tool.py: error: unrecognized arguments: --status open \n'.lower
+E    +      where 'usage: ticket_tool.py [-h] [--owner OWNER]\nticket_tool.py: error: unrecognized arguments: --status open \n' = CompletedProcess(args=['/tmp/minimax-stage-b-repro-5ti6qlce/minimax/.venv/bin/python', '/tmp/minimax-stage-b-repro-5ti..., stderr='usage: ticket_tool.py [-h] [--owner OWNER]\nticket_tool.py: error: unrecognized arguments: --status open \n').stderr
+_____________________ test_function_status_and_combination _____________________
+../../../demo/tests/test_target.py:40: in test_function_status_and_combination
+    assert [t["id"] for t in ticket_module.list_tickets(status="open")] == [1, 4]
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   TypeError: list_tickets() got an unexpected keyword argument 'status'
+____________________ test_function_none_preserves_behavior _____________________
+../../../demo/tests/test_target.py:45: in test_function_none_preserves_behavior
+    assert ticket_module.list_tickets(status=None) == ticket_module.list_tickets()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   TypeError: list_tickets() got an unexpected keyword argument 'status'
+______________________ test_function_invalid_status[OPEN] ______________________
+../../../demo/tests/test_target.py:52: in test_function_invalid_status
+    ticket_module.list_tickets(status=status)
+E   TypeError: list_tickets() got an unexpected keyword argument 'status'
+____________________ test_function_invalid_status[unknown] _____________________
+../../../demo/tests/test_target.py:52: in test_function_invalid_status
+    ticket_module.list_tickets(status=status)
+E   TypeError: list_tickets() got an unexpected keyword argument 'status'
+________________________ test_function_invalid_status[] ________________________
+../../../demo/tests/test_target.py:52: in test_function_invalid_status
+    ticket_module.list_tickets(status=status)
+E   TypeError: list_tickets() got an unexpected keyword argument 'status'
+_____________________ test_function_invalid_status[ open] ______________________
+../../../demo/tests/test_target.py:52: in test_function_invalid_status
+    ticket_module.list_tickets(status=status)
+E   TypeError: list_tickets() got an unexpected keyword argument 'status'
+_____________________ test_function_invalid_status[open ] ______________________
+../../../demo/tests/test_target.py:52: in test_function_invalid_status
+    ticket_module.list_tickets(status=status)
+E   TypeError: list_tickets() got an unexpected keyword argument 'status'
+=========================== short test summary info ============================
+FAILED ../../../demo/tests/test_target.py::test_each_valid_status[open-expected0]
+FAILED ../../../demo/tests/test_target.py::test_each_valid_status[in_progress-expected1]
+FAILED ../../../demo/tests/test_target.py::test_each_valid_status[closed-expected2]
+FAILED ../../../demo/tests/test_target.py::test_combined_filters[alice-open-expected0]
+FAILED ../../../demo/tests/test_target.py::test_combined_filters[alice-in_progress-expected1]
+FAILED ../../../demo/tests/test_target.py::test_combined_filters[alice-closed-expected2]
+FAILED ../../../demo/tests/test_target.py::test_combined_filters[bob-closed-expected3]
+FAILED ../../../demo/tests/test_target.py::test_combined_filters[nobody-open-expected4]
+FAILED ../../../demo/tests/test_target.py::test_invalid_status_is_explicit[OPEN]
+FAILED ../../../demo/tests/test_target.py::test_invalid_status_is_explicit[unknown]
+FAILED ../../../demo/tests/test_target.py::test_invalid_status_is_explicit[]
+FAILED ../../../demo/tests/test_target.py::test_invalid_status_is_explicit[ open]
+FAILED ../../../demo/tests/test_target.py::test_invalid_status_is_explicit[open ]
+FAILED ../../../demo/tests/test_target.py::test_function_status_and_combination
+FAILED ../../../demo/tests/test_target.py::test_function_none_preserves_behavior
+FAILED ../../../demo/tests/test_target.py::test_function_invalid_status[OPEN]
+FAILED ../../../demo/tests/test_target.py::test_function_invalid_status[unknown]
+FAILED ../../../demo/tests/test_target.py::test_function_invalid_status[] - T...
+FAILED ../../../demo/tests/test_target.py::test_function_invalid_status[ open]
+FAILED ../../../demo/tests/test_target.py::test_function_invalid_status[open ]
+20 failed in 0.76s

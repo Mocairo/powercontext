@@ -1,0 +1,56 @@
+--- a/ticket_tool.py
++++ b/ticket_tool.py
+@@ -1,7 +1,9 @@
+-"""Initial ticket query tool: listing and owner filtering only."""
++"""Ticket query tool: listing with owner and status filtering."""
+ import argparse
+ import json
+ 
++
++VALID_STATUSES = ("open", "in_progress", "closed")
+ 
+ TICKETS = [
+     {"id": 4, "title": "Broken link", "owner": "bob", "status": "open"},
+@@ -13,10 +15,22 @@
+ ]
+ 
+ 
+-def list_tickets(owner=None):
+-    """Return tickets in ascending id order, optionally matching an exact owner."""
++def list_tickets(owner=None, status=None):
++    """Return tickets in ascending id order with optional owner/status filters."""
++    if status is not None and status not in VALID_STATUSES:
++        raise ValueError(
++            "invalid status {!r}; expected one of: {}".format(
++                status, ", ".join(VALID_STATUSES)
++            )
++        )
++
+     return sorted(
+-        [dict(ticket) for ticket in TICKETS if owner is None or ticket["owner"] == owner],
++        [
++            dict(ticket)
++            for ticket in TICKETS
++            if (owner is None or ticket["owner"] == owner)
++            and (status is None or ticket["status"] == status)
++        ],
+         key=lambda ticket: ticket["id"],
+     )
+ 
+@@ -24,8 +38,15 @@
+ def main():
+     parser = argparse.ArgumentParser(description="Query tickets")
+     parser.add_argument("--owner", help="Filter by exact owner")
++    parser.add_argument("--status", help="Filter by exact status")
+     args = parser.parse_args()
+-    print(json.dumps(list_tickets(owner=args.owner), ensure_ascii=False))
++
++    try:
++        tickets = list_tickets(owner=args.owner, status=args.status)
++    except ValueError as exc:
++        parser.error(str(exc))
++
++    print(json.dumps(tickets, ensure_ascii=False))
+ 
+ 
+ if __name__ == "__main__":

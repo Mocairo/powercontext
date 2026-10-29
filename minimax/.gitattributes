@@ -1,0 +1,3 @@
+# Preserve raw pytest stdout and JUnit evidence, including diagnostic whitespace.
+evidence/**/*.txt -whitespace
+evidence/**/*.xml -whitespace

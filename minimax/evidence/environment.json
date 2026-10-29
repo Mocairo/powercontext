@@ -1,0 +1,18 @@
+{
+  "python": "3.12.7",
+  "platform": "Linux-6.8.0-138-generic-x86_64-with-glibc2.35",
+  "dependencies": {
+    "minimax-sdd": "0.1.0",
+    "powercontext": "1.4.1",
+    "pylibseekdb": "1.4.0.post2",
+    "pymysql": "1.2.0",
+    "httpx": "0.28.1",
+    "pytest": "9.0.2"
+  },
+  "seekdb_engine_version": "5.7.25-OceanBase seekdb-v1.4.0.0",
+  "official_baseline": "d647275c308e09b7b623f322a26f5c4e85734fb0",
+  "official_branch": "2026-competition-ecosystem",
+  "origin": "https://github.com/Mocairo/powercontext.git",
+  "branch": "codex/minimax-sdd",
+  "scope": "Stage A; zero real MiniMax calls"
+}

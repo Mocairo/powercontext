@@ -1,0 +1,19 @@
+{
+  "source_count": 8,
+  "file_count": 5,
+  "spec_ids": [
+    "BASE-001",
+    "BASE-002",
+    "STATUS-001",
+    "STATUS-002"
+  ],
+  "imported_at": "2026-10-29T11:44:58.396462+00:00",
+  "files": {
+    "/home/lijx/workspace/oceanbase/powercontext-minimax/minimax/.runs/stage-a/specs/requirements.json": "26f79a6418f584a133c995a67ca2060d91e903041edfc5e411081c8a515681fb",
+    "/home/lijx/workspace/oceanbase/powercontext-minimax/minimax/.runs/stage-a/before/ticket_tool.py": "a3ff1f4c9e24eea67f0e60842fec1d6fbdaffdbeb835c484a534759de36a7092",
+    "/home/lijx/workspace/oceanbase/powercontext-minimax/minimax/demo/tests/conftest.py": "0146973a18b2d21f5a2e4d4de56383d17c06f03cfbd37e9fddea06af4a333e91",
+    "/home/lijx/workspace/oceanbase/powercontext-minimax/minimax/demo/tests/test_regression.py": "94ad7bd4346a5589c9e78d165d3e5970802a9858c31824c4c814b4ee7fb0508c",
+    "/home/lijx/workspace/oceanbase/powercontext-minimax/minimax/demo/tests/test_target.py": "d4340e834370559ae885ef09a2fedab5dfb96bbaffe299288fdd04dc39403545"
+  },
+  "storage": "real seekdb"
+}

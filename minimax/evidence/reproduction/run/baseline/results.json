@@ -1,0 +1,57 @@
+{
+  "created_at": "2026-10-29T11:52:57.412490+00:00",
+  "code_sha256": "a3ff1f4c9e24eea67f0e60842fec1d6fbdaffdbeb835c484a534759de36a7092",
+  "test_sha256": {
+    "tests/conftest.py": "0146973a18b2d21f5a2e4d4de56383d17c06f03cfbd37e9fddea06af4a333e91",
+    "tests/test_regression.py": "94ad7bd4346a5589c9e78d165d3e5970802a9858c31824c4c814b4ee7fb0508c",
+    "tests/test_target.py": "d4340e834370559ae885ef09a2fedab5dfb96bbaffe299288fdd04dc39403545"
+  },
+  "results": {
+    "regression": {
+      "command": [
+        "/tmp/minimax-stage-a-repro-1378c2ed/minimax/.venv/bin/python",
+        "-m",
+        "pytest",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "/tmp/minimax-stage-a-repro-1378c2ed/minimax/demo/tests/test_regression.py",
+        "--tb=short",
+        "--junitxml=/tmp/minimax-stage-a-repro-1378c2ed/minimax/.runs/demo-final/evidence/baseline/regression.xml"
+      ],
+      "cwd": "/tmp/minimax-stage-a-repro-1378c2ed/minimax/.runs/demo-final/before",
+      "exit_code": 0,
+      "tests": 9,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "passed": 9,
+      "failure_due_to_missing_status": false,
+      "stdout": "/tmp/minimax-stage-a-repro-1378c2ed/minimax/.runs/demo-final/evidence/baseline/regression.stdout.txt",
+      "junit": "/tmp/minimax-stage-a-repro-1378c2ed/minimax/.runs/demo-final/evidence/baseline/regression.xml"
+    },
+    "target": {
+      "command": [
+        "/tmp/minimax-stage-a-repro-1378c2ed/minimax/.venv/bin/python",
+        "-m",
+        "pytest",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "/tmp/minimax-stage-a-repro-1378c2ed/minimax/demo/tests/test_target.py",
+        "--tb=short",
+        "--junitxml=/tmp/minimax-stage-a-repro-1378c2ed/minimax/.runs/demo-final/evidence/baseline/target.xml"
+      ],
+      "cwd": "/tmp/minimax-stage-a-repro-1378c2ed/minimax/.runs/demo-final/before",
+      "exit_code": 1,
+      "tests": 20,
+      "failures": 20,
+      "errors": 0,
+      "skipped": 0,
+      "passed": 0,
+      "failure_due_to_missing_status": true,
+      "stdout": "/tmp/minimax-stage-a-repro-1378c2ed/minimax/.runs/demo-final/evidence/baseline/target.stdout.txt",
+      "junit": "/tmp/minimax-stage-a-repro-1378c2ed/minimax/.runs/demo-final/evidence/baseline/target.xml"
+    }
+  }
+}

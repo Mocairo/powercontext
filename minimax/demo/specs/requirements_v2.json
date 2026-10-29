@@ -1,0 +1,69 @@
+{
+  "entries": [
+    {
+      "id": "BASE-001",
+      "version": 1,
+      "title": "List tickets in stable order",
+      "content": "The ticket CLI prints a JSON array to stdout and exits 0. With no filters it returns all tickets ordered by ascending integer id, independent of storage order. Each ticket has id, title, owner and status. Existing list behavior must remain unchanged when status is omitted.",
+      "symbols": [
+        "ticket_tool.py:list_tickets",
+        "ticket_tool.py:main"
+      ],
+      "tags": [
+        "tickets",
+        "list",
+        "sorting",
+        "regression"
+      ]
+    },
+    {
+      "id": "BASE-002",
+      "version": 1,
+      "title": "Filter by owner",
+      "content": "Optional --owner filters tickets by exact, case-sensitive owner equality. Empty or unknown owner matches nothing. No match prints [] and exits 0. Owner filtering preserves ascending id order.",
+      "symbols": [
+        "ticket_tool.py:list_tickets",
+        "ticket_tool.py:main"
+      ],
+      "tags": [
+        "tickets",
+        "owner",
+        "filter",
+        "regression"
+      ]
+    },
+    {
+      "id": "STATUS-001",
+      "version": 1,
+      "title": "Filter by status and combine conditions",
+      "content": "Add optional --status to the CLI and optional status=None to list_tickets. Valid canonical states are open, in_progress and closed. A supplied status filters by equality, combined with owner using AND. Unmatched combinations print [] and exit 0. Output order stays ascending id; omitted status preserves all existing behavior.",
+      "symbols": [
+        "ticket_tool.py:list_tickets",
+        "ticket_tool.py:main"
+      ],
+      "tags": [
+        "tickets",
+        "status",
+        "owner",
+        "filter",
+        "target"
+      ]
+    },
+    {
+      "id": "STATUS-002",
+      "version": 2,
+      "title": "Validate status values",
+      "content": "Status input is strictly case-sensitive lowercase: only open, in_progress and closed are accepted. Reject OPEN, whitespace-padded values, unknown values and an empty string. CLI invalid input exits 2, emits no stdout, and stderr includes 'invalid status' and all three canonical values. list_tickets raises ValueError for invalid status.",
+      "symbols": [
+        "ticket_tool.py:list_tickets",
+        "ticket_tool.py:main"
+      ],
+      "tags": [
+        "tickets",
+        "status",
+        "validation",
+        "target"
+      ]
+    }
+  ]
+}

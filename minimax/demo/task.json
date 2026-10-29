@@ -1,0 +1,7 @@
+{
+  "id": "ticket-status-filter",
+  "goal": "Add status filtering to the ticket query CLI and list_tickets, preserving existing list, owner and stable ordering behavior. Implement the current database-retrieved specifications and pass the unchanged target and regression tests.",
+  "query_tokens": ["tickets", "status", "owner", "filter", "sorting", "validation", "regression"],
+  "spec_ids": ["BASE-001", "BASE-002", "STATUS-001", "STATUS-002"],
+  "allowed_files": ["ticket_tool.py"]
+}

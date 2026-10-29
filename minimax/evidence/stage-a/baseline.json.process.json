@@ -1,0 +1,15 @@
+{
+  "command": [
+    "/home/lijx/workspace/oceanbase/powercontext-minimax/minimax/.venv/bin/python",
+    "-m",
+    "minimax_sdd.cli",
+    "baseline",
+    "--run-dir",
+    "/home/lijx/workspace/oceanbase/powercontext-minimax/minimax/.runs/stage-a",
+    "--output",
+    "/home/lijx/workspace/oceanbase/powercontext-minimax/minimax/.runs/stage-a/evidence/baseline.json"
+  ],
+  "exit_code": 0,
+  "stdout": "{\n  \"created_at\": \"2026-10-29T11:45:26.867133+00:00\",\n  \"code_sha256\": \"a3ff1f4c9e24eea67f0e60842fec1d6fbdaffdbeb835c484a534759de36a7092\",\n  \"test_sha256\": {\n    \"tests/conftest.py\": \"0146973a18b2d21f5a2e4d4de56383d17c06f03cfbd37e9fddea06af4a333e91\",\n    \"tests/test_regression.py\": \"94ad7bd4346a5589c9e78d165d3e5970802a9858c31824c4c814b4ee7fb0508c\",\n    \"tests/test_target.py\": \"d4340e834370559ae885ef09a2fedab5dfb96bbaffe299288fdd04dc39403545\"\n  },\n  \"results\": {\n    \"regression\": {\n      \"command\": [\n        \"/home/lijx/workspace/oceanbase/powercontext-minimax/minimax/.venv/bin/python\",\n        \"-m\",\n        \"pytest\",\n        \"-q\",\n        \"-p\",\n        \"no:cacheprovider\",\n        \"/home/lijx/workspace/oceanbase/powercontext-minimax/minimax/demo/tests/test_regression.py\",\n        \"--tb=short\",\n        \"--junitxml=/home/lijx/workspace/oceanbase/powercontext-minimax/minimax/.runs/stage-a/evidence/baseline/regression.xml\"\n      ],\n      \"cwd\": \"/home/lijx/workspace/oceanbase/powercontext-minimax/minimax/.runs/stage-a/before\",\n      \"exit_code\": 0,\n      \"tests\": 9,\n      \"failures\": 0,\n      \"errors\": 0,\n      \"skipped\": 0,\n      \"passed\": 9,\n      \"failure_due_to_missing_status\": false,\n      \"stdout\": \"/home/lijx/workspace/oceanbase/powercontext-minimax/minimax/.runs/stage-a/evidence/baseline/regression.stdout.txt\",\n      \"junit\": \"/home/lijx/workspace/oceanbase/powercontext-minimax/minimax/.runs/stage-a/evidence/baseline/regression.xml\"\n    },\n    \"target\": {\n      \"command\": [\n        \"/home/lijx/workspace/oceanbase/powercontext-minimax/minimax/.venv/bin/python\",\n        \"-m\",\n        \"pytest\",\n        \"-q\",\n        \"-p\",\n        \"no:cacheprovider\",\n        \"/home/lijx/workspace/oceanbase/powercontext-minimax/minimax/demo/tests/test_target.py\",\n        \"--tb=short\",\n        \"--junitxml=/home/lijx/workspace/oceanbase/powercontext-minimax/minimax/.runs/stage-a/evidence/baseline/target.xml\"\n      ],\n      \"cwd\": \"/home/lijx/workspace/oceanbase/powercontext-minimax/minimax/.runs/stage-a/before\",\n      \"exit_code\": 1,\n      \"tests\": 20,\n      \"failures\": 20,\n      \"errors\": 0,\n      \"skipped\": 0,\n      \"passed\": 0,\n      \"failure_due_to_missing_status\": true,\n      \"stdout\": \"/home/lijx/workspace/oceanbase/powercontext-minimax/minimax/.runs/stage-a/evidence/baseline/target.stdout.txt\",\n      \"junit\": \"/home/lijx/workspace/oceanbase/powercontext-minimax/minimax/.runs/stage-a/evidence/baseline/target.xml\"\n    }\n  }\n}\n",
+  "stderr": ""
+}

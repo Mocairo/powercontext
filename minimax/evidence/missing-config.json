@@ -1,0 +1,17 @@
+{
+  "command": [
+    ".venv/bin/python",
+    "-m",
+    "minimax_sdd.cli",
+    "stage-b",
+    "--run-dir",
+    ".runs/stage-a",
+    "--config",
+    "/home/lijx/.config/oceanbase/minimax.env"
+  ],
+  "exit_code": 2,
+  "stdout": "",
+  "stderr": "MiniMaxError: MiniMax configuration missing: create /home/lijx/.config/oceanbase/minimax.env with MINIMAX_BASE_URL, MINIMAX_API_KEY, MINIMAX_MODEL; no request was sent.\n",
+  "requests_sent": 0,
+  "basis": "Missing configuration exits before client construction; covered by test_missing_config_does_not_contact_services_or_create_run."
+}

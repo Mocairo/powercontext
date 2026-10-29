@@ -1,0 +1,25 @@
+[build-system]
+requires = ["hatchling==1.27.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "minimax-sdd"
+version = "0.1.0"
+description = "Stage A engineering context assistant for OceanBase MiniMax"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+  "powercontext[builtin]==1.4.1",
+  "pylibseekdb==1.4.0.post2",
+  "httpx==0.28.1",
+  "pytest==9.0.2",
+  "pymysql==1.2.0",
+]
+
+[project.scripts]
+minimax-sdd = "minimax_sdd.cli:main"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/minimax_sdd"]

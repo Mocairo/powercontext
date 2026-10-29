@@ -1,0 +1,654 @@
+{
+  "sources": [
+    {
+      "source_id": "BASE-001",
+      "source_type": "spec",
+      "path": "/tmp/minimax-stage-a-repro-1378c2ed/minimax/.runs/demo-final/specs/requirements.json",
+      "symbol": "[\"ticket_tool.py:list_tickets\", \"ticket_tool.py:main\"]",
+      "spec_id": "BASE-001",
+      "version": "1",
+      "content": "{\"content\": \"The ticket CLI prints a JSON array to stdout and exits 0. With no filters it returns all tickets ordered by ascending integer id, independent of storage order. Each ticket has id, title, owner and status. Existing list behavior must remain unchanged when status is omitted.\", \"id\": \"BASE-001\", \"symbols\": [\"ticket_tool.py:list_tickets\", \"ticket_tool.py:main\"], \"tags\": [\"tickets\", \"list\", \"sorting\", \"regression\"], \"title\": \"List tickets in stable order\", \"version\": 1}",
+      "content_sha256": "6e76d906086369e57458964438da4209c813a2f968dd587d2a5d3795d759cdaf",
+      "file_sha256": "a9277ef2709ab4588363f6c7495ea0b2ba025adadc6e97ef1a14b395153e9c2d",
+      "line_start": 4,
+      "line_end": 4,
+      "imported_at": "2026-10-29T11:52:45.683861+00:00",
+      "current": true,
+      "symbols": [
+        "ticket_tool.py:list_tickets",
+        "ticket_tool.py:main"
+      ]
+    },
+    {
+      "source_id": "BASE-002",
+      "source_type": "spec",
+      "path": "/tmp/minimax-stage-a-repro-1378c2ed/minimax/.runs/demo-final/specs/requirements.json",
+      "symbol": "[\"ticket_tool.py:list_tickets\", \"ticket_tool.py:main\"]",
+      "spec_id": "BASE-002",
+      "version": "1",
+      "content": "{\"content\": \"Optional --owner filters tickets by exact, case-sensitive owner equality. Empty or unknown owner matches nothing. No match prints [] and exits 0. Owner filtering preserves ascending id order.\", \"id\": \"BASE-002\", \"symbols\": [\"ticket_tool.py:list_tickets\", \"ticket_tool.py:main\"], \"tags\": [\"tickets\", \"owner\", \"filter\", \"regression\"], \"title\": \"Filter by owner\", \"version\": 1}",
+      "content_sha256": "f015f8fbbf8693b889de3fb4e022d086cbf75c36e67ff64d855083334e97666f",
+      "file_sha256": "a9277ef2709ab4588363f6c7495ea0b2ba025adadc6e97ef1a14b395153e9c2d",
+      "line_start": 20,
+      "line_end": 20,
+      "imported_at": "2026-10-29T11:52:45.683861+00:00",
+      "current": true,
+      "symbols": [
+        "ticket_tool.py:list_tickets",
+        "ticket_tool.py:main"
+      ]
+    },
+    {
+      "source_id": "STATUS-001",
+      "source_type": "spec",
+      "path": "/tmp/minimax-stage-a-repro-1378c2ed/minimax/.runs/demo-final/specs/requirements.json",
+      "symbol": "[\"ticket_tool.py:list_tickets\", \"ticket_tool.py:main\"]",
+      "spec_id": "STATUS-001",
+      "version": "1",
+      "content": "{\"content\": \"Add optional --status to the CLI and optional status=None to list_tickets. Valid canonical states are open, in_progress and closed. A supplied status filters by equality, combined with owner using AND. Unmatched combinations print [] and exit 0. Output order stays ascending id; omitted status preserves all existing behavior.\", \"id\": \"STATUS-001\", \"symbols\": [\"ticket_tool.py:list_tickets\", \"ticket_tool.py:main\"], \"tags\": [\"tickets\", \"status\", \"owner\", \"filter\", \"target\"], \"title\": \"Filter by status and combine conditions\", \"version\": 1}",
+      "content_sha256": "77e7a61198e02da4e6e3c17c9ad0eaf768a03267dbd6cb5c546cfe993a39fcb1",
+      "file_sha256": "a9277ef2709ab4588363f6c7495ea0b2ba025adadc6e97ef1a14b395153e9c2d",
+      "line_start": 36,
+      "line_end": 36,
+      "imported_at": "2026-10-29T11:52:45.683861+00:00",
+      "current": true,
+      "symbols": [
+        "ticket_tool.py:list_tickets",
+        "ticket_tool.py:main"
+      ]
+    },
+    {
+      "source_id": "STATUS-002",
+      "source_type": "spec",
+      "path": "/tmp/minimax-stage-a-repro-1378c2ed/minimax/.runs/demo-final/specs/requirements.json",
+      "symbol": "[\"ticket_tool.py:list_tickets\", \"ticket_tool.py:main\"]",
+      "spec_id": "STATUS-002",
+      "version": "2",
+      "content": "{\"content\": \"Status input is strictly case-sensitive lowercase: only open, in_progress and closed are accepted. Reject OPEN, whitespace-padded values, unknown values and an empty string. CLI invalid input exits 2, emits no stdout, and stderr includes 'invalid status' and all three canonical values. list_tickets raises ValueError for invalid status.\", \"id\": \"STATUS-002\", \"symbols\": [\"ticket_tool.py:list_tickets\", \"ticket_tool.py:main\"], \"tags\": [\"tickets\", \"status\", \"validation\", \"target\"], \"title\": \"Validate status values\", \"version\": 2}",
+      "content_sha256": "85d7c8170293ce9cc934d60021d31c9aa78deacc9b3b0cfade04f1d5c0e093ac",
+      "file_sha256": "a9277ef2709ab4588363f6c7495ea0b2ba025adadc6e97ef1a14b395153e9c2d",
+      "line_start": 53,
+      "line_end": 53,
+      "imported_at": "2026-10-29T11:52:45.683861+00:00",
+      "current": true,
+      "symbols": [
+        "ticket_tool.py:list_tickets",
+        "ticket_tool.py:main"
+      ]
+    },
+    {
+      "source_id": "fa8096d9c27bd28dcd271947af9b00e0992e11f643f0f0e9b226ee57025cd1cc",
+      "source_type": "code",
+      "path": "/tmp/minimax-stage-a-repro-1378c2ed/minimax/.runs/demo-final/before/ticket_tool.py",
+      "symbol": "[\"ticket_tool.py:list_tickets\", \"ticket_tool.py:main\"]",
+      "spec_id": null,
+      "version": "a3ff1f4c9e24eea67f0e60842fec1d6fbdaffdbeb835c484a534759de36a7092",
+      "content": "\"\"\"Initial ticket query tool: listing and owner filtering only.\"\"\"\nimport argparse\nimport json\n\n\nTICKETS = [\n    {\"id\": 4, \"title\": \"Broken link\", \"owner\": \"bob\", \"status\": \"open\"},\n    {\"id\": 1, \"title\": \"Login error\", \"owner\": \"alice\", \"status\": \"open\"},\n    {\"id\": 6, \"title\": \"Update help\", \"owner\": \"carol\", \"status\": \"closed\"},\n    {\"id\": 3, \"title\": \"Fix export\", \"owner\": \"alice\", \"status\": \"closed\"},\n    {\"id\": 5, \"title\": \"Slow search\", \"owner\": \"alice\", \"status\": \"in_progress\"},\n    {\"id\": 2, \"title\": \"Add metrics\", \"owner\": \"bob\", \"status\": \"in_progress\"},\n]\n\n\ndef list_tickets(owner=None):\n    \"\"\"Return tickets in ascending id order, optionally matching an exact owner.\"\"\"\n    return sorted(\n        [dict(ticket) for ticket in TICKETS if owner is None or ticket[\"owner\"] == owner],\n        key=lambda ticket: ticket[\"id\"],\n    )\n\n\ndef main():\n    parser = argparse.ArgumentParser(description=\"Query tickets\")\n    parser.add_argument(\"--owner\", help=\"Filter by exact owner\")\n    args = parser.parse_args()\n    print(json.dumps(list_tickets(owner=args.owner), ensure_ascii=False))\n\n\nif __name__ == \"__main__\":\n    main()\n",
+      "content_sha256": "a3ff1f4c9e24eea67f0e60842fec1d6fbdaffdbeb835c484a534759de36a7092",
+      "file_sha256": "a3ff1f4c9e24eea67f0e60842fec1d6fbdaffdbeb835c484a534759de36a7092",
+      "line_start": 1,
+      "line_end": 32,
+      "imported_at": "2026-10-29T11:52:45.683861+00:00",
+      "current": true,
+      "symbols": [
+        "ticket_tool.py:list_tickets",
+        "ticket_tool.py:main"
+      ],
+      "symbol_locations": [
+        {
+          "name": "list_tickets",
+          "line_start": 16,
+          "line_end": 21
+        },
+        {
+          "name": "main",
+          "line_start": 24,
+          "line_end": 28
+        }
+      ]
+    },
+    {
+      "source_id": "5108f4bb398e6f8874a97cf321e99f2cb06a37d8c7511b956d04184e0598b48d",
+      "source_type": "test",
+      "path": "/tmp/minimax-stage-a-repro-1378c2ed/minimax/demo/tests/conftest.py",
+      "symbol": "[\"ticket_tool.py:*\"]",
+      "spec_id": null,
+      "version": "0146973a18b2d21f5a2e4d4de56383d17c06f03cfbd37e9fddea06af4a333e91",
+      "content": "\"\"\"Fixed acceptance harness; never copied into the model-writable workspace.\"\"\"\nimport importlib.util\nimport os\nfrom pathlib import Path\nimport subprocess\nimport sys\n\nimport pytest\n\n\n@pytest.fixture\ndef business_path():\n    root = Path(os.environ.get(\"DEMO_WORKSPACE\", Path(__file__).parents[1] / \"before\"))\n    path = root.resolve() / \"ticket_tool.py\"\n    assert path.is_file(), f\"Missing business module: {path}\"\n    return path\n\n\n@pytest.fixture\ndef run_cli(business_path):\n    def run(*args):\n        return subprocess.run(\n            [sys.executable, str(business_path), *args],\n            text=True, capture_output=True, timeout=10, check=False,\n        )\n    return run\n\n\n@pytest.fixture\ndef ticket_module(business_path):\n    spec = importlib.util.spec_from_file_location(\"ticket_acceptance_subject\", business_path)\n    module = importlib.util.module_from_spec(spec)\n    spec.loader.exec_module(module)\n    return module\n",
+      "content_sha256": "0146973a18b2d21f5a2e4d4de56383d17c06f03cfbd37e9fddea06af4a333e91",
+      "file_sha256": "0146973a18b2d21f5a2e4d4de56383d17c06f03cfbd37e9fddea06af4a333e91",
+      "line_start": 1,
+      "line_end": 34,
+      "imported_at": "2026-10-29T11:52:45.683861+00:00",
+      "current": true,
+      "symbols": [
+        "ticket_tool.py:*"
+      ],
+      "symbol_locations": [
+        {
+          "name": "business_path",
+          "line_start": 12,
+          "line_end": 16
+        },
+        {
+          "name": "run_cli",
+          "line_start": 20,
+          "line_end": 26
+        },
+        {
+          "name": "ticket_module",
+          "line_start": 30,
+          "line_end": 34
+        }
+      ]
+    },
+    {
+      "source_id": "3b75be8617061b1b9726465ea8cc3d154ab4dab2596d32a9b84c14a326d87e7c",
+      "source_type": "test",
+      "path": "/tmp/minimax-stage-a-repro-1378c2ed/minimax/demo/tests/test_regression.py",
+      "symbol": "[\"ticket_tool.py:*\"]",
+      "spec_id": null,
+      "version": "94ad7bd4346a5589c9e78d165d3e5970802a9858c31824c4c814b4ee7fb0508c",
+      "content": "\"\"\"BASE-001/BASE-002: immutable pre-existing behavior acceptance tests.\"\"\"\nimport json\n\n\ndef ids(result):\n    assert result.returncode == 0, result.stderr\n    assert result.stderr == \"\"\n    return [ticket[\"id\"] for ticket in json.loads(result.stdout)]\n\n\ndef test_list_all_stable_order(run_cli):\n    assert ids(run_cli()) == [1, 2, 3, 4, 5, 6]\n\n\ndef test_list_preserves_data_fields(run_cli):\n    result = run_cli()\n    assert result.returncode == 0\n    assert json.loads(result.stdout)[0] == {\n        \"id\": 1, \"title\": \"Login error\", \"owner\": \"alice\", \"status\": \"open\"\n    }\n\n\ndef test_owner_alice(run_cli):\n    assert ids(run_cli(\"--owner\", \"alice\")) == [1, 3, 5]\n\n\ndef test_owner_bob(run_cli):\n    assert ids(run_cli(\"--owner\", \"bob\")) == [2, 4]\n\n\ndef test_unknown_owner(run_cli):\n    assert ids(run_cli(\"--owner\", \"nobody\")) == []\n\n\ndef test_owner_case_sensitive(run_cli):\n    assert ids(run_cli(\"--owner\", \"ALICE\")) == []\n\n\ndef test_empty_owner(run_cli):\n    assert ids(run_cli(\"--owner\", \"\")) == []\n\n\ndef test_function_sorting_and_owner(ticket_module):\n    assert [item[\"id\"] for item in ticket_module.list_tickets()] == [1, 2, 3, 4, 5, 6]\n    assert [item[\"id\"] for item in ticket_module.list_tickets(owner=\"alice\")] == [1, 3, 5]\n\n\ndef test_repeated_calls_do_not_mutate_results(ticket_module):\n    before = ticket_module.list_tickets()\n    ticket_module.list_tickets(owner=\"bob\")\n    assert ticket_module.list_tickets() == before\n",
+      "content_sha256": "94ad7bd4346a5589c9e78d165d3e5970802a9858c31824c4c814b4ee7fb0508c",
+      "file_sha256": "94ad7bd4346a5589c9e78d165d3e5970802a9858c31824c4c814b4ee7fb0508c",
+      "line_start": 1,
+      "line_end": 51,
+      "imported_at": "2026-10-29T11:52:45.683861+00:00",
+      "current": true,
+      "symbols": [
+        "ticket_tool.py:*"
+      ],
+      "symbol_locations": [
+        {
+          "name": "ids",
+          "line_start": 5,
+          "line_end": 8
+        },
+        {
+          "name": "test_list_all_stable_order",
+          "line_start": 11,
+          "line_end": 12
+        },
+        {
+          "name": "test_list_preserves_data_fields",
+          "line_start": 15,
+          "line_end": 20
+        },
+        {
+          "name": "test_owner_alice",
+          "line_start": 23,
+          "line_end": 24
+        },
+        {
+          "name": "test_owner_bob",
+          "line_start": 27,
+          "line_end": 28
+        },
+        {
+          "name": "test_unknown_owner",
+          "line_start": 31,
+          "line_end": 32
+        },
+        {
+          "name": "test_owner_case_sensitive",
+          "line_start": 35,
+          "line_end": 36
+        },
+        {
+          "name": "test_empty_owner",
+          "line_start": 39,
+          "line_end": 40
+        },
+        {
+          "name": "test_function_sorting_and_owner",
+          "line_start": 43,
+          "line_end": 45
+        },
+        {
+          "name": "test_repeated_calls_do_not_mutate_results",
+          "line_start": 48,
+          "line_end": 51
+        }
+      ]
+    },
+    {
+      "source_id": "8b2852513aabfde6698de1e18e945390555054b9bf8d978d7c61dc67f15a2153",
+      "source_type": "test",
+      "path": "/tmp/minimax-stage-a-repro-1378c2ed/minimax/demo/tests/test_target.py",
+      "symbol": "[\"ticket_tool.py:*\"]",
+      "spec_id": null,
+      "version": "d4340e834370559ae885ef09a2fedab5dfb96bbaffe299288fdd04dc39403545",
+      "content": "\"\"\"STATUS-001 and STATUS-002 v2: identical tests before and after MiniMax.\"\"\"\nimport json\n\nimport pytest\n\n\ndef ids(result):\n    assert result.returncode == 0, result.stderr\n    assert result.stderr == \"\"\n    return [ticket[\"id\"] for ticket in json.loads(result.stdout)]\n\n\n@pytest.mark.parametrize(\"status,expected\", [\n    (\"open\", [1, 4]), (\"in_progress\", [2, 5]), (\"closed\", [3, 6]),\n])\ndef test_each_valid_status(run_cli, status, expected):\n    assert ids(run_cli(\"--status\", status)) == expected\n\n\n@pytest.mark.parametrize(\"owner,status,expected\", [\n    (\"alice\", \"open\", [1]), (\"alice\", \"in_progress\", [5]),\n    (\"alice\", \"closed\", [3]), (\"bob\", \"closed\", []),\n    (\"nobody\", \"open\", []),\n])\ndef test_combined_filters(run_cli, owner, status, expected):\n    assert ids(run_cli(\"--owner\", owner, \"--status\", status)) == expected\n\n\n@pytest.mark.parametrize(\"status\", [\"OPEN\", \"unknown\", \"\", \" open\", \"open \"])\ndef test_invalid_status_is_explicit(run_cli, status):\n    result = run_cli(\"--status\", status)\n    assert result.returncode == 2\n    assert result.stdout == \"\"\n    assert \"invalid status\" in result.stderr.lower()\n    for canonical in (\"open\", \"in_progress\", \"closed\"):\n        assert canonical in result.stderr\n\n\ndef test_function_status_and_combination(ticket_module):\n    assert [t[\"id\"] for t in ticket_module.list_tickets(status=\"open\")] == [1, 4]\n    assert [t[\"id\"] for t in ticket_module.list_tickets(owner=\"alice\", status=\"open\")] == [1]\n\n\ndef test_function_none_preserves_behavior(ticket_module):\n    assert ticket_module.list_tickets(status=None) == ticket_module.list_tickets()\n    assert ticket_module.list_tickets(owner=\"alice\", status=None) == ticket_module.list_tickets(owner=\"alice\")\n\n\n@pytest.mark.parametrize(\"status\", [\"OPEN\", \"unknown\", \"\", \" open\", \"open \"])\ndef test_function_invalid_status(ticket_module, status):\n    with pytest.raises(ValueError):\n        ticket_module.list_tickets(status=status)\n",
+      "content_sha256": "d4340e834370559ae885ef09a2fedab5dfb96bbaffe299288fdd04dc39403545",
+      "file_sha256": "d4340e834370559ae885ef09a2fedab5dfb96bbaffe299288fdd04dc39403545",
+      "line_start": 1,
+      "line_end": 52,
+      "imported_at": "2026-10-29T11:52:45.683861+00:00",
+      "current": true,
+      "symbols": [
+        "ticket_tool.py:*"
+      ],
+      "symbol_locations": [
+        {
+          "name": "ids",
+          "line_start": 7,
+          "line_end": 10
+        },
+        {
+          "name": "test_each_valid_status",
+          "line_start": 16,
+          "line_end": 17
+        },
+        {
+          "name": "test_combined_filters",
+          "line_start": 25,
+          "line_end": 26
+        },
+        {
+          "name": "test_invalid_status_is_explicit",
+          "line_start": 30,
+          "line_end": 36
+        },
+        {
+          "name": "test_function_status_and_combination",
+          "line_start": 39,
+          "line_end": 41
+        },
+        {
+          "name": "test_function_none_preserves_behavior",
+          "line_start": 44,
+          "line_end": 46
+        },
+        {
+          "name": "test_function_invalid_status",
+          "line_start": 50,
+          "line_end": 52
+        }
+      ]
+    }
+  ],
+  "specifications": [
+    {
+      "source_id": "BASE-001",
+      "source_type": "spec",
+      "path": "/tmp/minimax-stage-a-repro-1378c2ed/minimax/.runs/demo-final/specs/requirements.json",
+      "symbol": "[\"ticket_tool.py:list_tickets\", \"ticket_tool.py:main\"]",
+      "spec_id": "BASE-001",
+      "version": "1",
+      "content": "{\"content\": \"The ticket CLI prints a JSON array to stdout and exits 0. With no filters it returns all tickets ordered by ascending integer id, independent of storage order. Each ticket has id, title, owner and status. Existing list behavior must remain unchanged when status is omitted.\", \"id\": \"BASE-001\", \"symbols\": [\"ticket_tool.py:list_tickets\", \"ticket_tool.py:main\"], \"tags\": [\"tickets\", \"list\", \"sorting\", \"regression\"], \"title\": \"List tickets in stable order\", \"version\": 1}",
+      "content_sha256": "6e76d906086369e57458964438da4209c813a2f968dd587d2a5d3795d759cdaf",
+      "file_sha256": "a9277ef2709ab4588363f6c7495ea0b2ba025adadc6e97ef1a14b395153e9c2d",
+      "line_start": 4,
+      "line_end": 4,
+      "imported_at": "2026-10-29T11:52:45.683861+00:00",
+      "current": true,
+      "symbols": [
+        "ticket_tool.py:list_tickets",
+        "ticket_tool.py:main"
+      ]
+    },
+    {
+      "source_id": "BASE-002",
+      "source_type": "spec",
+      "path": "/tmp/minimax-stage-a-repro-1378c2ed/minimax/.runs/demo-final/specs/requirements.json",
+      "symbol": "[\"ticket_tool.py:list_tickets\", \"ticket_tool.py:main\"]",
+      "spec_id": "BASE-002",
+      "version": "1",
+      "content": "{\"content\": \"Optional --owner filters tickets by exact, case-sensitive owner equality. Empty or unknown owner matches nothing. No match prints [] and exits 0. Owner filtering preserves ascending id order.\", \"id\": \"BASE-002\", \"symbols\": [\"ticket_tool.py:list_tickets\", \"ticket_tool.py:main\"], \"tags\": [\"tickets\", \"owner\", \"filter\", \"regression\"], \"title\": \"Filter by owner\", \"version\": 1}",
+      "content_sha256": "f015f8fbbf8693b889de3fb4e022d086cbf75c36e67ff64d855083334e97666f",
+      "file_sha256": "a9277ef2709ab4588363f6c7495ea0b2ba025adadc6e97ef1a14b395153e9c2d",
+      "line_start": 20,
+      "line_end": 20,
+      "imported_at": "2026-10-29T11:52:45.683861+00:00",
+      "current": true,
+      "symbols": [
+        "ticket_tool.py:list_tickets",
+        "ticket_tool.py:main"
+      ]
+    },
+    {
+      "source_id": "STATUS-001",
+      "source_type": "spec",
+      "path": "/tmp/minimax-stage-a-repro-1378c2ed/minimax/.runs/demo-final/specs/requirements.json",
+      "symbol": "[\"ticket_tool.py:list_tickets\", \"ticket_tool.py:main\"]",
+      "spec_id": "STATUS-001",
+      "version": "1",
+      "content": "{\"content\": \"Add optional --status to the CLI and optional status=None to list_tickets. Valid canonical states are open, in_progress and closed. A supplied status filters by equality, combined with owner using AND. Unmatched combinations print [] and exit 0. Output order stays ascending id; omitted status preserves all existing behavior.\", \"id\": \"STATUS-001\", \"symbols\": [\"ticket_tool.py:list_tickets\", \"ticket_tool.py:main\"], \"tags\": [\"tickets\", \"status\", \"owner\", \"filter\", \"target\"], \"title\": \"Filter by status and combine conditions\", \"version\": 1}",
+      "content_sha256": "77e7a61198e02da4e6e3c17c9ad0eaf768a03267dbd6cb5c546cfe993a39fcb1",
+      "file_sha256": "a9277ef2709ab4588363f6c7495ea0b2ba025adadc6e97ef1a14b395153e9c2d",
+      "line_start": 36,
+      "line_end": 36,
+      "imported_at": "2026-10-29T11:52:45.683861+00:00",
+      "current": true,
+      "symbols": [
+        "ticket_tool.py:list_tickets",
+        "ticket_tool.py:main"
+      ]
+    },
+    {
+      "source_id": "STATUS-002",
+      "source_type": "spec",
+      "path": "/tmp/minimax-stage-a-repro-1378c2ed/minimax/.runs/demo-final/specs/requirements.json",
+      "symbol": "[\"ticket_tool.py:list_tickets\", \"ticket_tool.py:main\"]",
+      "spec_id": "STATUS-002",
+      "version": "2",
+      "content": "{\"content\": \"Status input is strictly case-sensitive lowercase: only open, in_progress and closed are accepted. Reject OPEN, whitespace-padded values, unknown values and an empty string. CLI invalid input exits 2, emits no stdout, and stderr includes 'invalid status' and all three canonical values. list_tickets raises ValueError for invalid status.\", \"id\": \"STATUS-002\", \"symbols\": [\"ticket_tool.py:list_tickets\", \"ticket_tool.py:main\"], \"tags\": [\"tickets\", \"status\", \"validation\", \"target\"], \"title\": \"Validate status values\", \"version\": 2}",
+      "content_sha256": "85d7c8170293ce9cc934d60021d31c9aa78deacc9b3b0cfade04f1d5c0e093ac",
+      "file_sha256": "a9277ef2709ab4588363f6c7495ea0b2ba025adadc6e97ef1a14b395153e9c2d",
+      "line_start": 53,
+      "line_end": 53,
+      "imported_at": "2026-10-29T11:52:45.683861+00:00",
+      "current": true,
+      "symbols": [
+        "ticket_tool.py:list_tickets",
+        "ticket_tool.py:main"
+      ]
+    }
+  ],
+  "code": [
+    {
+      "source_id": "fa8096d9c27bd28dcd271947af9b00e0992e11f643f0f0e9b226ee57025cd1cc",
+      "source_type": "code",
+      "path": "/tmp/minimax-stage-a-repro-1378c2ed/minimax/.runs/demo-final/before/ticket_tool.py",
+      "symbol": "[\"ticket_tool.py:list_tickets\", \"ticket_tool.py:main\"]",
+      "spec_id": null,
+      "version": "a3ff1f4c9e24eea67f0e60842fec1d6fbdaffdbeb835c484a534759de36a7092",
+      "content": "\"\"\"Initial ticket query tool: listing and owner filtering only.\"\"\"\nimport argparse\nimport json\n\n\nTICKETS = [\n    {\"id\": 4, \"title\": \"Broken link\", \"owner\": \"bob\", \"status\": \"open\"},\n    {\"id\": 1, \"title\": \"Login error\", \"owner\": \"alice\", \"status\": \"open\"},\n    {\"id\": 6, \"title\": \"Update help\", \"owner\": \"carol\", \"status\": \"closed\"},\n    {\"id\": 3, \"title\": \"Fix export\", \"owner\": \"alice\", \"status\": \"closed\"},\n    {\"id\": 5, \"title\": \"Slow search\", \"owner\": \"alice\", \"status\": \"in_progress\"},\n    {\"id\": 2, \"title\": \"Add metrics\", \"owner\": \"bob\", \"status\": \"in_progress\"},\n]\n\n\ndef list_tickets(owner=None):\n    \"\"\"Return tickets in ascending id order, optionally matching an exact owner.\"\"\"\n    return sorted(\n        [dict(ticket) for ticket in TICKETS if owner is None or ticket[\"owner\"] == owner],\n        key=lambda ticket: ticket[\"id\"],\n    )\n\n\ndef main():\n    parser = argparse.ArgumentParser(description=\"Query tickets\")\n    parser.add_argument(\"--owner\", help=\"Filter by exact owner\")\n    args = parser.parse_args()\n    print(json.dumps(list_tickets(owner=args.owner), ensure_ascii=False))\n\n\nif __name__ == \"__main__\":\n    main()\n",
+      "content_sha256": "a3ff1f4c9e24eea67f0e60842fec1d6fbdaffdbeb835c484a534759de36a7092",
+      "file_sha256": "a3ff1f4c9e24eea67f0e60842fec1d6fbdaffdbeb835c484a534759de36a7092",
+      "line_start": 1,
+      "line_end": 32,
+      "imported_at": "2026-10-29T11:52:45.683861+00:00",
+      "current": true,
+      "symbols": [
+        "ticket_tool.py:list_tickets",
+        "ticket_tool.py:main"
+      ],
+      "symbol_locations": [
+        {
+          "name": "list_tickets",
+          "line_start": 16,
+          "line_end": 21
+        },
+        {
+          "name": "main",
+          "line_start": 24,
+          "line_end": 28
+        }
+      ]
+    }
+  ],
+  "tests": [
+    {
+      "source_id": "5108f4bb398e6f8874a97cf321e99f2cb06a37d8c7511b956d04184e0598b48d",
+      "source_type": "test",
+      "path": "/tmp/minimax-stage-a-repro-1378c2ed/minimax/demo/tests/conftest.py",
+      "symbol": "[\"ticket_tool.py:*\"]",
+      "spec_id": null,
+      "version": "0146973a18b2d21f5a2e4d4de56383d17c06f03cfbd37e9fddea06af4a333e91",
+      "content": "\"\"\"Fixed acceptance harness; never copied into the model-writable workspace.\"\"\"\nimport importlib.util\nimport os\nfrom pathlib import Path\nimport subprocess\nimport sys\n\nimport pytest\n\n\n@pytest.fixture\ndef business_path():\n    root = Path(os.environ.get(\"DEMO_WORKSPACE\", Path(__file__).parents[1] / \"before\"))\n    path = root.resolve() / \"ticket_tool.py\"\n    assert path.is_file(), f\"Missing business module: {path}\"\n    return path\n\n\n@pytest.fixture\ndef run_cli(business_path):\n    def run(*args):\n        return subprocess.run(\n            [sys.executable, str(business_path), *args],\n            text=True, capture_output=True, timeout=10, check=False,\n        )\n    return run\n\n\n@pytest.fixture\ndef ticket_module(business_path):\n    spec = importlib.util.spec_from_file_location(\"ticket_acceptance_subject\", business_path)\n    module = importlib.util.module_from_spec(spec)\n    spec.loader.exec_module(module)\n    return module\n",
+      "content_sha256": "0146973a18b2d21f5a2e4d4de56383d17c06f03cfbd37e9fddea06af4a333e91",
+      "file_sha256": "0146973a18b2d21f5a2e4d4de56383d17c06f03cfbd37e9fddea06af4a333e91",
+      "line_start": 1,
+      "line_end": 34,
+      "imported_at": "2026-10-29T11:52:45.683861+00:00",
+      "current": true,
+      "symbols": [
+        "ticket_tool.py:*"
+      ],
+      "symbol_locations": [
+        {
+          "name": "business_path",
+          "line_start": 12,
+          "line_end": 16
+        },
+        {
+          "name": "run_cli",
+          "line_start": 20,
+          "line_end": 26
+        },
+        {
+          "name": "ticket_module",
+          "line_start": 30,
+          "line_end": 34
+        }
+      ]
+    },
+    {
+      "source_id": "3b75be8617061b1b9726465ea8cc3d154ab4dab2596d32a9b84c14a326d87e7c",
+      "source_type": "test",
+      "path": "/tmp/minimax-stage-a-repro-1378c2ed/minimax/demo/tests/test_regression.py",
+      "symbol": "[\"ticket_tool.py:*\"]",
+      "spec_id": null,
+      "version": "94ad7bd4346a5589c9e78d165d3e5970802a9858c31824c4c814b4ee7fb0508c",
+      "content": "\"\"\"BASE-001/BASE-002: immutable pre-existing behavior acceptance tests.\"\"\"\nimport json\n\n\ndef ids(result):\n    assert result.returncode == 0, result.stderr\n    assert result.stderr == \"\"\n    return [ticket[\"id\"] for ticket in json.loads(result.stdout)]\n\n\ndef test_list_all_stable_order(run_cli):\n    assert ids(run_cli()) == [1, 2, 3, 4, 5, 6]\n\n\ndef test_list_preserves_data_fields(run_cli):\n    result = run_cli()\n    assert result.returncode == 0\n    assert json.loads(result.stdout)[0] == {\n        \"id\": 1, \"title\": \"Login error\", \"owner\": \"alice\", \"status\": \"open\"\n    }\n\n\ndef test_owner_alice(run_cli):\n    assert ids(run_cli(\"--owner\", \"alice\")) == [1, 3, 5]\n\n\ndef test_owner_bob(run_cli):\n    assert ids(run_cli(\"--owner\", \"bob\")) == [2, 4]\n\n\ndef test_unknown_owner(run_cli):\n    assert ids(run_cli(\"--owner\", \"nobody\")) == []\n\n\ndef test_owner_case_sensitive(run_cli):\n    assert ids(run_cli(\"--owner\", \"ALICE\")) == []\n\n\ndef test_empty_owner(run_cli):\n    assert ids(run_cli(\"--owner\", \"\")) == []\n\n\ndef test_function_sorting_and_owner(ticket_module):\n    assert [item[\"id\"] for item in ticket_module.list_tickets()] == [1, 2, 3, 4, 5, 6]\n    assert [item[\"id\"] for item in ticket_module.list_tickets(owner=\"alice\")] == [1, 3, 5]\n\n\ndef test_repeated_calls_do_not_mutate_results(ticket_module):\n    before = ticket_module.list_tickets()\n    ticket_module.list_tickets(owner=\"bob\")\n    assert ticket_module.list_tickets() == before\n",
+      "content_sha256": "94ad7bd4346a5589c9e78d165d3e5970802a9858c31824c4c814b4ee7fb0508c",
+      "file_sha256": "94ad7bd4346a5589c9e78d165d3e5970802a9858c31824c4c814b4ee7fb0508c",
+      "line_start": 1,
+      "line_end": 51,
+      "imported_at": "2026-10-29T11:52:45.683861+00:00",
+      "current": true,
+      "symbols": [
+        "ticket_tool.py:*"
+      ],
+      "symbol_locations": [
+        {
+          "name": "ids",
+          "line_start": 5,
+          "line_end": 8
+        },
+        {
+          "name": "test_list_all_stable_order",
+          "line_start": 11,
+          "line_end": 12
+        },
+        {
+          "name": "test_list_preserves_data_fields",
+          "line_start": 15,
+          "line_end": 20
+        },
+        {
+          "name": "test_owner_alice",
+          "line_start": 23,
+          "line_end": 24
+        },
+        {
+          "name": "test_owner_bob",
+          "line_start": 27,
+          "line_end": 28
+        },
+        {
+          "name": "test_unknown_owner",
+          "line_start": 31,
+          "line_end": 32
+        },
+        {
+          "name": "test_owner_case_sensitive",
+          "line_start": 35,
+          "line_end": 36
+        },
+        {
+          "name": "test_empty_owner",
+          "line_start": 39,
+          "line_end": 40
+        },
+        {
+          "name": "test_function_sorting_and_owner",
+          "line_start": 43,
+          "line_end": 45
+        },
+        {
+          "name": "test_repeated_calls_do_not_mutate_results",
+          "line_start": 48,
+          "line_end": 51
+        }
+      ]
+    },
+    {
+      "source_id": "8b2852513aabfde6698de1e18e945390555054b9bf8d978d7c61dc67f15a2153",
+      "source_type": "test",
+      "path": "/tmp/minimax-stage-a-repro-1378c2ed/minimax/demo/tests/test_target.py",
+      "symbol": "[\"ticket_tool.py:*\"]",
+      "spec_id": null,
+      "version": "d4340e834370559ae885ef09a2fedab5dfb96bbaffe299288fdd04dc39403545",
+      "content": "\"\"\"STATUS-001 and STATUS-002 v2: identical tests before and after MiniMax.\"\"\"\nimport json\n\nimport pytest\n\n\ndef ids(result):\n    assert result.returncode == 0, result.stderr\n    assert result.stderr == \"\"\n    return [ticket[\"id\"] for ticket in json.loads(result.stdout)]\n\n\n@pytest.mark.parametrize(\"status,expected\", [\n    (\"open\", [1, 4]), (\"in_progress\", [2, 5]), (\"closed\", [3, 6]),\n])\ndef test_each_valid_status(run_cli, status, expected):\n    assert ids(run_cli(\"--status\", status)) == expected\n\n\n@pytest.mark.parametrize(\"owner,status,expected\", [\n    (\"alice\", \"open\", [1]), (\"alice\", \"in_progress\", [5]),\n    (\"alice\", \"closed\", [3]), (\"bob\", \"closed\", []),\n    (\"nobody\", \"open\", []),\n])\ndef test_combined_filters(run_cli, owner, status, expected):\n    assert ids(run_cli(\"--owner\", owner, \"--status\", status)) == expected\n\n\n@pytest.mark.parametrize(\"status\", [\"OPEN\", \"unknown\", \"\", \" open\", \"open \"])\ndef test_invalid_status_is_explicit(run_cli, status):\n    result = run_cli(\"--status\", status)\n    assert result.returncode == 2\n    assert result.stdout == \"\"\n    assert \"invalid status\" in result.stderr.lower()\n    for canonical in (\"open\", \"in_progress\", \"closed\"):\n        assert canonical in result.stderr\n\n\ndef test_function_status_and_combination(ticket_module):\n    assert [t[\"id\"] for t in ticket_module.list_tickets(status=\"open\")] == [1, 4]\n    assert [t[\"id\"] for t in ticket_module.list_tickets(owner=\"alice\", status=\"open\")] == [1]\n\n\ndef test_function_none_preserves_behavior(ticket_module):\n    assert ticket_module.list_tickets(status=None) == ticket_module.list_tickets()\n    assert ticket_module.list_tickets(owner=\"alice\", status=None) == ticket_module.list_tickets(owner=\"alice\")\n\n\n@pytest.mark.parametrize(\"status\", [\"OPEN\", \"unknown\", \"\", \" open\", \"open \"])\ndef test_function_invalid_status(ticket_module, status):\n    with pytest.raises(ValueError):\n        ticket_module.list_tickets(status=status)\n",
+      "content_sha256": "d4340e834370559ae885ef09a2fedab5dfb96bbaffe299288fdd04dc39403545",
+      "file_sha256": "d4340e834370559ae885ef09a2fedab5dfb96bbaffe299288fdd04dc39403545",
+      "line_start": 1,
+      "line_end": 52,
+      "imported_at": "2026-10-29T11:52:45.683861+00:00",
+      "current": true,
+      "symbols": [
+        "ticket_tool.py:*"
+      ],
+      "symbol_locations": [
+        {
+          "name": "ids",
+          "line_start": 7,
+          "line_end": 10
+        },
+        {
+          "name": "test_each_valid_status",
+          "line_start": 16,
+          "line_end": 17
+        },
+        {
+          "name": "test_combined_filters",
+          "line_start": 25,
+          "line_end": 26
+        },
+        {
+          "name": "test_invalid_status_is_explicit",
+          "line_start": 30,
+          "line_end": 36
+        },
+        {
+          "name": "test_function_status_and_combination",
+          "line_start": 39,
+          "line_end": 41
+        },
+        {
+          "name": "test_function_none_preserves_behavior",
+          "line_start": 44,
+          "line_end": 46
+        },
+        {
+          "name": "test_function_invalid_status",
+          "line_start": 50,
+          "line_end": 52
+        }
+      ]
+    }
+  ],
+  "query_evidence": {
+    "engine": "seekdb",
+    "version": "5.7.25-OceanBase seekdb-v1.4.0.0",
+    "queries": [
+      {
+        "sql": "SELECT path,file_sha256 FROM minimax_manifest ORDER BY path",
+        "params": [],
+        "rowcount": 5
+      },
+      {
+        "sql": "SELECT * FROM minimax_sources WHERE current_valid=1 AND source_type='spec' AND (spec_id IN (%s,%s,%s,%s) OR search_text LIKE %s OR search_text LIKE %s OR search_text LIKE %s OR search_text LIKE %s OR search_text LIKE %s OR search_text LIKE %s OR search_text LIKE %s) ORDER BY spec_id",
+        "params": [
+          "BASE-001",
+          "BASE-002",
+          "STATUS-001",
+          "STATUS-002",
+          "%tickets%",
+          "%status%",
+          "%owner%",
+          "%filter%",
+          "%sorting%",
+          "%validation%",
+          "%regression%"
+        ],
+        "rowcount": 4
+      },
+      {
+        "sql": "SELECT * FROM minimax_sources WHERE current_valid=1 AND source_type IN ('code','test') AND symbol LIKE %s ORDER BY source_type,path",
+        "params": [
+          "%ticket_tool.py:%"
+        ],
+        "rowcount": 4
+      },
+      {
+        "sql": "SELECT VERSION() AS version",
+        "params": [],
+        "rowcount": 1
+      }
+    ],
+    "source_rowcount": 8
+  },
+  "task": {
+    "id": "ticket-status-filter",
+    "goal": "Add status filtering to the ticket query CLI and list_tickets, preserving existing list, owner and stable ordering behavior. Implement the current database-retrieved specifications and pass the unchanged target and regression tests.",
+    "query_tokens": [
+      "tickets",
+      "status",
+      "owner",
+      "filter",
+      "sorting",
+      "validation",
+      "regression"
+    ],
+    "spec_ids": [
+      "BASE-001",
+      "BASE-002",
+      "STATUS-001",
+      "STATUS-002"
+    ],
+    "allowed_files": [
+      "ticket_tool.py"
+    ]
+  },
+  "progress": {
+    "code_hash": "a3ff1f4c9e24eea67f0e60842fec1d6fbdaffdbeb835c484a534759de36a7092",
+    "completed": [
+      "specifications_updated_to_v2",
+      "real_database_context_retrieved",
+      "baseline_regression_passed",
+      "target_tests_failed_for_missing_status"
+    ],
+    "goal": "Add status filtering to the ticket query CLI and list_tickets, preserving existing list, owner and stable ordering behavior. Implement the current database-retrieved specifications and pass the unchanged target and regression tests.",
+    "stage": "awaiting_minimax",
+    "test_results": {
+      "regression": {
+        "errors": 0,
+        "exit_code": 0,
+        "failures": 0,
+        "passed": 9,
+        "skipped": 0,
+        "tests": 9
+      },
+      "target": {
+        "errors": 0,
+        "exit_code": 1,
+        "failures": 20,
+        "passed": 0,
+        "skipped": 0,
+        "tests": 20
+      }
+    },
+    "todo": [
+      "call_minimax",
+      "run_unchanged_target_and_regression_tests",
+      "review_acceptance_report"
+    ]
+  },
+  "state_receipt": {
+    "backend": "PowerContext 1.4.1 / SQLite",
+    "scope_id": "scp_28y2gya5r0v893vbfacsm3w5sw",
+    "scope_name": "ticket-status-filter",
+    "family": "atomic-memory",
+    "artifact_id": "art_7f61273ff7804acaa8709a7aeda1404a",
+    "revision": 1,
+    "content_digest": "sha256:879268e2c1356a126bd67426c5feea5d315eb3f4569dc7238ddd0dbd860b55d0",
+    "client_instance_id": "5324c7ff75fb48faab41bdd5d5834f47",
+    "pid": 3773447
+  },
+  "reader_pid": 3773447,
+  "next_action": "call_minimax"
+}

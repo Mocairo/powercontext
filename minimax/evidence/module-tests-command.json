@@ -1,0 +1,7 @@
+{
+  "command": "uv run --locked pytest -q",
+  "cwd": "/tmp/minimax-stage-a-repro-1378c2ed/minimax",
+  "exit_code": 0,
+  "result": "44 passed, 5 upstream warnings, zero skipped",
+  "log": "module-tests.txt"
+}

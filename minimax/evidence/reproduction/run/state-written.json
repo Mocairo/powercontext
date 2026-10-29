@@ -1,0 +1,48 @@
+{
+  "previous_state": null,
+  "state": {
+    "goal": "Add status filtering to the ticket query CLI and list_tickets, preserving existing list, owner and stable ordering behavior. Implement the current database-retrieved specifications and pass the unchanged target and regression tests.",
+    "stage": "awaiting_minimax",
+    "completed": [
+      "specifications_updated_to_v2",
+      "real_database_context_retrieved",
+      "baseline_regression_passed",
+      "target_tests_failed_for_missing_status"
+    ],
+    "todo": [
+      "call_minimax",
+      "run_unchanged_target_and_regression_tests",
+      "review_acceptance_report"
+    ],
+    "test_results": {
+      "regression": {
+        "exit_code": 0,
+        "tests": 9,
+        "passed": 9,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "target": {
+        "exit_code": 1,
+        "tests": 20,
+        "passed": 0,
+        "failures": 20,
+        "errors": 0,
+        "skipped": 0
+      }
+    },
+    "code_hash": "a3ff1f4c9e24eea67f0e60842fec1d6fbdaffdbeb835c484a534759de36a7092"
+  },
+  "receipt": {
+    "backend": "PowerContext 1.4.1 / SQLite",
+    "scope_id": "scp_28y2gya5r0v893vbfacsm3w5sw",
+    "scope_name": "ticket-status-filter",
+    "family": "atomic-memory",
+    "artifact_id": "art_7f61273ff7804acaa8709a7aeda1404a",
+    "revision": 1,
+    "content_digest": "sha256:879268e2c1356a126bd67426c5feea5d315eb3f4569dc7238ddd0dbd860b55d0",
+    "client_instance_id": "47432505fb7040a3abc5692d25ac3302",
+    "pid": 3772242
+  }
+}

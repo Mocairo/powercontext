@@ -1,0 +1,46 @@
+{
+  "command": [
+    "/home/lijx/workspace/oceanbase/powercontext-minimax/minimax/.venv/bin/python",
+    "-m",
+    "pytest",
+    "-q",
+    "tests"
+  ],
+  "cwd": "/home/lijx/workspace/oceanbase/powercontext-minimax/minimax",
+  "exit_code": 0,
+  "tests_passed": 44,
+  "source_sha256": {
+    "demo/README.md": "c8118e68a75afc20cc980252f7fdaab589b9711027e8eb62864427036c1e08b9",
+    "demo/after/ticket_tool.py": "9d2f06451a2bea0a94edc71dea9575310dec6f429b411c0573072de83cd7d7bd",
+    "demo/before/ticket_tool.py": "a3ff1f4c9e24eea67f0e60842fec1d6fbdaffdbeb835c484a534759de36a7092",
+    "demo/specs/requirements.json": "26f79a6418f584a133c995a67ca2060d91e903041edfc5e411081c8a515681fb",
+    "demo/specs/requirements_v2.json": "a9277ef2709ab4588363f6c7495ea0b2ba025adadc6e97ef1a14b395153e9c2d",
+    "demo/task.json": "d3b63a1ca8769393c9e8a0877098e53081d845760f7e693d1305c16eca9b8067",
+    "demo/tests/conftest.py": "0146973a18b2d21f5a2e4d4de56383d17c06f03cfbd37e9fddea06af4a333e91",
+    "demo/tests/test_regression.py": "94ad7bd4346a5589c9e78d165d3e5970802a9858c31824c4c814b4ee7fb0508c",
+    "demo/tests/test_target.py": "d4340e834370559ae885ef09a2fedab5dfb96bbaffe299288fdd04dc39403545",
+    "src/minimax_sdd/__init__.py": "e44726f9353295b17098d1a5bc43502b84ccb45b8532f88370815ac28f71978e",
+    "src/minimax_sdd/catalog.py": "77c6cca1135e88d43e1858e71874f3884278b27722e0d186b03d7a606a0099a6",
+    "src/minimax_sdd/cli.py": "eb2aba6195bdb6f15ffd01c6b4d9d217020a12c897a4d79e2ad54b04c96b84a8",
+    "src/minimax_sdd/minimax_client.py": "1cbfa270df66912c1c4b4c8aa27763522e29af1d120f59036b99760dce1463c9",
+    "src/minimax_sdd/patches.py": "f27467601972cd695fe32e3b2fb4e471cb2f4c80b964c33ad02458c11a61e348",
+    "src/minimax_sdd/state.py": "4515572707a7933ecbd7adb5a752b3ae3327186527c1beff3cddbf3b93687866",
+    "src/minimax_sdd/workflow.py": "5bf77440975b76c81e14cd5622ddf28cf344d6a910ba7a16364da0a7d5131b26",
+    "src/sdd_context/__init__.py": "2c0dd05b2621f08246426d590442b803ff189fc47e99a8877d23ea5366621300",
+    "src/sdd_context/__main__.py": "2d1d7335ad7e358c6c83519f5f20a88a8397b9fa8e13b2475671b106543432cb",
+    "tests/test_catalog.py": "1dc714ac68965bcc5b48ecce7ab4ed9edcde4ed1631790823d4d3dcf7c3e7f38",
+    "tests/test_minimax_client.py": "16730bb75bdf00dada92070e5ff71220decb4b494883bec5e506e8d91354fd63",
+    "tests/test_patches.py": "2c37250175eee6db0cc25747e500e01d30df5bc29aea48192ce8f04fa95202fa",
+    "tests/test_state.py": "fdf6e2f2ca8d96eaecc23f6fc9ea4c7766ba5912d6854159030e8c10e90b8700",
+    "tests/test_workflow.py": "5247ec5ca955f01a8cbcb35429dbf853c182fc1f11c239360390ce8956cf3721"
+  },
+  "dependencies": {
+    "powercontext": "1.4.1",
+    "pylibseekdb": "1.4.0.post2",
+    "PyMySQL": "1.2.0",
+    "httpx": "0.28.1",
+    "pytest": "9.0.2"
+  },
+  "live_minimax_requests": 0,
+  "official_score": null
+}

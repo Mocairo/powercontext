@@ -74,7 +74,14 @@ class MiniMaxClient:
     def _call(self, messages: list[dict], max_tokens: int) -> dict:
         if self.calls >= self.max_calls:
             raise MiniMaxError('MiniMax call budget exhausted; no automatic retries are made.')
-        body = {'model': self.config.model, 'messages': messages, 'max_tokens': max_tokens, 'stream': False}
+        body = {
+            'model': self.config.model,
+            'messages': messages,
+            'max_completion_tokens': max_tokens,
+            'stream': False,
+        }
+        if 'M3' in self.config.model.upper():
+            body['reasoning_split'] = True
         if len(json.dumps(body).encode()) > 256_000:
             raise MiniMaxError('MiniMax request exceeds 256000-byte context limit.')
         self.calls += 1
@@ -116,7 +123,17 @@ class MiniMaxClient:
         usage = payload.get('usage', {})
         safe_usage = {key: value for key, value in usage.items() if key in ('prompt_tokens', 'completion_tokens', 'total_tokens') and isinstance(value, int)} if isinstance(usage, dict) else {}
         # Ignore model-generated extra fields, reasoning_content, headers and raw payload.
-        record = {'model': self.config.model, 'final_content': content, 'usage': safe_usage, 'request': body, 'call_number': self.calls, 'source': 'fixture' if self.transport is not None else 'real_minimax'}
+        record = {
+            'model': self.config.model,
+            'response_model': payload.get('model') if isinstance(payload.get('model'), str) else None,
+            'response_id': payload.get('id') if isinstance(payload.get('id'), str) else None,
+            'final_content': content,
+            'response_content': content,
+            'usage': safe_usage,
+            'request': body,
+            'call_number': self.calls,
+            'source': 'fixture' if self.transport is not None else 'real_minimax',
+        }
         # A service should never echo its key, but do not persist it if it does.
         return json.loads(json.dumps(record, ensure_ascii=False).replace(self.config.api_key, '[REDACTED]'))
 

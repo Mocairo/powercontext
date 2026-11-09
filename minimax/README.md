@@ -58,7 +58,7 @@ uv run --locked minimax-sdd query --run-dir .runs/demo-a \
 
 阶段 B 用真实服务预检和真实代码生成共最多两次请求，读取数据库上下文及恢复状态，只将模型返回的 `ticket_tool.py` 应用到新 `candidate-<runid>` 目录，运行同一套固定测试，保存脱敏请求、最终代码、差异及测试日志，并更新 PowerContext。它不会读取 `demo/after/` 来代替模型输出。最后的 `query` 是新进程，会检索候选代码并读取新的状态 revision。
 
-本机 `.runs/stage-a` 已完成真实生成、测试和源码审查，最终状态为 `local_acceptance_complete`，下一步为参赛者平台提测。直接再次运行 `stage-b` 会被拒绝，避免重复调用。新运行通过测试后会先进入验收审查；重新演示请使用新的 `--run-dir`，不要覆盖历史证据。失败时也不会自动重试；应检查记录，修复实际原因并显式保存恢复操作，或从新的演示目录开始。本次首次直连超时、代理修复、恢复状态和成功重试均保留在 `evidence/stage-b/`。
+本机 `.runs/platform-final` 已完成真实生成、测试和源码审查，最终状态为 `local_acceptance_complete`，下一步为参赛者平台提测。直接再次运行 `stage-b` 会被拒绝，避免重复调用。新运行通过测试后会先进入验收审查；重新演示请使用新的 `--run-dir`，不要覆盖历史证据。失败时也不会自动重试；应检查记录，修复实际原因并显式保存恢复操作，或从新的演示目录开始。本次首次直连超时、代理修复、恢复状态和成功重试均保留在 `evidence/stage-b/`。
 
 ## 分步入口与数据范围
 
@@ -84,13 +84,24 @@ uv run --locked minimax-sdd reset --run-dir .runs/demo-a
 
 它会删除该演示的数据库、状态和证据；保留结果时另选新目录即可。不会清理共享服务、外部数据库或其他题目数据。
 
+## 平台兼容复核入口
+
+仓库根目录新增 `TASK.md`、`verify.py`、`audit_delivery.py`、`requirements.txt` 和 `requirements-lock.txt`，用于提交前的独立复核：
+
+```bash
+uv run --locked python verify.py --output evidence/recheck-module
+uv run --locked python audit_delivery.py --output evidence/platform-audit-20261109
+```
+
+两条命令均不依赖新的模型调用；`audit_delivery.py` 读取已保存的真实 MiniMax、seekdb 和 PowerContext 证据。最新复核结果为 `exit 0`、`all_required_gates_passed: true`、`local_eligible_points: 20`。`local_eligible_points` 只是本地资格检查结果，不是比赛平台评分。
+
 ## 证据与边界
 
 - [初始验证](evidence/stage-a/report.json)：回归通过、目标有效失败，以及规格更新与状态复用。
-- [真实模型输出](evidence/stage-b/attempt-02/minimax-final-output.json)、[代码差异](evidence/stage-b/attempt-02/model.patch)、[测试结果](evidence/stage-b/tests-after/results.json)：对应 `demo/after/ticket_tool.py`。
+- [真实模型输出](evidence/stage-b/attempt-03/minimax-final-output.json)、[代码差异](evidence/stage-b/attempt-03/model.patch)、[测试结果](evidence/stage-b/attempt-03/tests.json)：对应 `demo/after/ticket_tool.py`。
 - [独立新环境完整复现](evidence/stage-b/reproduction/)：模块 44 项、交付代码 29 项、完整 A→B 及新进程恢复均通过；第二次真实生成也通过同一验收集。
-- [新进程状态恢复](evidence/stage-b/restart-verification.json)：读取阶段 B 的 revision 4，并实际选择 `review_acceptance_report`。
-- [最终本地验收](evidence/stage-b/final-acceptance.json)：审查与完整复现后写入 revision 5，新进程再次读取并选择 `submit_on_competition_platform`；该待办不表示已经提测。
+- [新进程状态恢复](evidence/stage-b/context-final.json)：读取阶段 B 的 revision 3，并实际选择 `review_acceptance_report`。
+- [最终本地验收](evidence/stage-b/final-acceptance.json)：审查与完整复现后写入 revision 3，新进程再次读取并选择 `submit_on_competition_platform`；该待办不表示已经提测。
 - [来源与许可](SOURCES.md)、[证据索引](evidence/README.md)。
 
 补丁工具只允许写隔离目录内的 `ticket_tool.py`，禁止测试、路径穿越及链接绕过；它不是任意 Python 的安全执行沙箱。测试子进程不继承凭据环境，模型代码仍应在受控环境执行。日志不保存密钥、认证头或模型私有思维链。初次网络接入修复由 Codex 完成，交付业务修改则与 MiniMax 最终输出逐字一致。

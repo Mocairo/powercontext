@@ -1,6 +1,6 @@
 {
   "previous_state": {
-    "code_hash": "77448e765557902f54e1ebbdd52e86db429ba5d5f49137ec30130ec72f87fc55",
+    "code_hash": "9d2f06451a2bea0a94edc71dea9575310dec6f429b411c0573072de83cd7d7bd",
     "completed": [
       "specifications_updated_to_v2",
       "real_database_context_retrieved",
@@ -9,14 +9,8 @@
       "real_minimax_output_applied",
       "unchanged_tests_all_passed"
     ],
-    "evidence": "evidence/stage-b-8e19297720ce",
+    "evidence": "evidence/stage-b-5fd742fc4a45",
     "goal": "Add status filtering to the ticket query CLI and list_tickets, preserving existing list, owner and stable ordering behavior. Implement the current database-retrieved specifications and pass the unchanged target and regression tests.",
-    "recovery_history": [
-      {
-        "action": "Enabled existing environment proxy and installed SOCKS support after confirmed direct connection timeout; retry authorized by user.",
-        "failed_evidence": "evidence/stage-b-a0ee321d9f1a"
-      }
-    ],
     "stage": "verified",
     "test_results": {
       "regression": {
@@ -42,17 +36,17 @@
   },
   "previous_receipt": {
     "backend": "PowerContext 1.4.1 / SQLite",
-    "scope_id": "scp_1d9kfz4na7fwn5b3axwjgqd49z",
+    "scope_id": "scp_15vsr707v8pe139hwq1wmzggjb",
     "scope_name": "ticket-status-filter",
     "family": "atomic-memory",
-    "artifact_id": "art_7336ff192bf7438cbc3a196f531a0220",
-    "revision": 4,
-    "content_digest": "sha256:9a3e33995c667175cf188dd5eb9ef81df2a60fa3a47c1af87ae79f5762020a86",
-    "client_instance_id": "b23f3054751e4a13a57c98c8950e166c",
-    "pid": 4097681
+    "artifact_id": "art_ea94578b34804b7e8bd6ead5dbf497f1",
+    "revision": 2,
+    "content_digest": "sha256:0859969e1c78fb09f97d7be757c53ffb98f7c8519abd38328bc9621283ce4edb",
+    "client_instance_id": "4205d771995242afadad997282fc9e6b",
+    "pid": 495565
   },
   "state": {
-    "code_hash": "77448e765557902f54e1ebbdd52e86db429ba5d5f49137ec30130ec72f87fc55",
+    "code_hash": "9d2f06451a2bea0a94edc71dea9575310dec6f429b411c0573072de83cd7d7bd",
     "completed": [
       "specifications_updated_to_v2",
       "real_database_context_retrieved",
@@ -61,17 +55,10 @@
       "real_minimax_output_applied",
       "unchanged_tests_all_passed",
       "model_source_review_passed",
-      "fresh_environment_full_live_reproduction_passed",
-      "six_local_acceptance_conditions_verified"
+      "delivery_audit_passed"
     ],
-    "evidence": "evidence/stage-b-8e19297720ce",
+    "evidence": "evidence/stage-b/attempt-03",
     "goal": "Add status filtering to the ticket query CLI and list_tickets, preserving existing list, owner and stable ordering behavior. Implement the current database-retrieved specifications and pass the unchanged target and regression tests.",
-    "recovery_history": [
-      {
-        "action": "Enabled existing environment proxy and installed SOCKS support after confirmed direct connection timeout; retry authorized by user.",
-        "failed_evidence": "evidence/stage-b-a0ee321d9f1a"
-      }
-    ],
     "stage": "local_acceptance_complete",
     "test_results": {
       "regression": {
@@ -97,14 +84,14 @@
   },
   "receipt": {
     "backend": "PowerContext 1.4.1 / SQLite",
-    "scope_id": "scp_1d9kfz4na7fwn5b3axwjgqd49z",
+    "scope_id": "scp_15vsr707v8pe139hwq1wmzggjb",
     "scope_name": "ticket-status-filter",
     "family": "atomic-memory",
-    "artifact_id": "art_7336ff192bf7438cbc3a196f531a0220",
-    "revision": 5,
-    "content_digest": "sha256:f58d1a6a2e2e9c0ed512fe60c413a28a08f3a4932e8e623d2b4aae4ec4aab337",
-    "client_instance_id": "b23f3054751e4a13a57c98c8950e166c",
-    "pid": 4097681
+    "artifact_id": "art_ea94578b34804b7e8bd6ead5dbf497f1",
+    "revision": 3,
+    "content_digest": "sha256:87d0efcf2ddcd0ecbdc5723a6cdcc1b60e7b62b09d85154d090a9cc53244d9ba",
+    "client_instance_id": "4205d771995242afadad997282fc9e6b",
+    "pid": 495565
   },
-  "contribution": "Codex reviewed the unchanged model-generated code and actual verification evidence; no business repair."
+  "contribution": "The model supplied the business change; no later business repair was made."
 }

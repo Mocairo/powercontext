@@ -1,0 +1,61 @@
+{
+  "stage": "A",
+  "status": "complete",
+  "created_at": "2026-11-09T12:13:25.630427+00:00",
+  "minimax_real_calls": 0,
+  "spec_update_verified": true,
+  "powercontext_restart_verified": true,
+  "state_writer": {
+    "backend": "PowerContext 1.4.1 / SQLite",
+    "scope_id": "scp_4wqag3hrc64cat3p7qf6a2p6es",
+    "scope_name": "ticket-status-filter",
+    "family": "atomic-memory",
+    "artifact_id": "art_eb117e4d0c714698b9fc974630811479",
+    "revision": 1,
+    "content_digest": "sha256:879268e2c1356a126bd67426c5feea5d315eb3f4569dc7238ddd0dbd860b55d0",
+    "client_instance_id": "05c5b4a194834f1cbe156852084c7d1c",
+    "pid": 1060420
+  },
+  "state_reader": {
+    "backend": "PowerContext 1.4.1 / SQLite",
+    "scope_id": "scp_4wqag3hrc64cat3p7qf6a2p6es",
+    "scope_name": "ticket-status-filter",
+    "family": "atomic-memory",
+    "artifact_id": "art_eb117e4d0c714698b9fc974630811479",
+    "revision": 1,
+    "content_digest": "sha256:879268e2c1356a126bd67426c5feea5d315eb3f4569dc7238ddd0dbd860b55d0",
+    "client_instance_id": "1035e6b3c5ba4138ba22f6c426e77d8f",
+    "pid": 1061487
+  },
+  "next_action": "call_minimax",
+  "baseline": {
+    "regression": {
+      "exit_code": 0,
+      "tests": 9,
+      "passed": 9,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "target": {
+      "exit_code": 1,
+      "tests": 20,
+      "passed": 0,
+      "failures": 20,
+      "errors": 0,
+      "skipped": 0
+    }
+  },
+  "code_sha256": "a3ff1f4c9e24eea67f0e60842fec1d6fbdaffdbeb835c484a534759de36a7092",
+  "test_sha256": {
+    "tests/conftest.py": "0146973a18b2d21f5a2e4d4de56383d17c06f03cfbd37e9fddea06af4a333e91",
+    "tests/test_regression.py": "94ad7bd4346a5589c9e78d165d3e5970802a9858c31824c4c814b4ee7fb0508c",
+    "tests/test_target.py": "d4340e834370559ae885ef09a2fedab5dfb96bbaffe299288fdd04dc39403545"
+  },
+  "pending": [
+    "MiniMax真实参与代码修改",
+    "修改后同一目标测试和回归全部通过",
+    "最终完整验收和平台提测"
+  ],
+  "evidence_dir": "/tmp/minimax-review-56mxa9q1/stage-a/evidence"
+}

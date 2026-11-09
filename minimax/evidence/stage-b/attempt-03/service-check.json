@@ -1,0 +1,26 @@
+{
+  "model": "MiniMax-M3.1-Flash",
+  "response_model": "MiniMax-M3.1-Flash",
+  "response_id": "0740e913b3bb4e88678d9fe00dc99b4d",
+  "final_content": "OK",
+  "response_content": "OK",
+  "usage": {
+    "total_tokens": 222,
+    "prompt_tokens": 207,
+    "completion_tokens": 15
+  },
+  "request": {
+    "model": "MiniMax-M3.1-Flash",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Reply with OK only."
+      }
+    ],
+    "max_completion_tokens": 4096,
+    "stream": false,
+    "reasoning_split": true
+  },
+  "call_number": 1,
+  "source": "real_minimax"
+}

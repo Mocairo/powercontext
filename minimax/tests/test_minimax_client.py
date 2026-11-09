@@ -8,7 +8,7 @@ from minimax_sdd.minimax_client import MiniMaxClient, MiniMaxConfig, MiniMaxErro
 
 
 def client(handler):
-    return MiniMaxClient(MiniMaxConfig('https://api.minimax.io/v1', 'fixture-secret', 'fixture-model'), transport=httpx.MockTransport(handler))
+    return MiniMaxClient(MiniMaxConfig('https://api.minimax.io/v1', 'fixture-secret', 'MiniMax-M3.1-Flash'), transport=httpx.MockTransport(handler))
 
 
 def response(content='{"files":{"ticket_tool.py":"print(1)\\n"}}', **extra):
@@ -47,7 +47,8 @@ def test_request_and_reasoning_removal():
     assert result['source'] == 'fixture'
     assert 'PRIVATE' not in json.dumps(result)
     assert 'fixture-secret' not in json.dumps(result)
-    assert calls[0]['max_tokens'] == 16384
+    assert calls[0]['max_completion_tokens'] == 16384
+    assert calls[0]['reasoning_split'] is True
 
 
 @pytest.mark.parametrize('status,match', [(401, 'authentication'), (403, 'authentication'), (429, 'rate/quota'), (500, 'HTTP 500')])

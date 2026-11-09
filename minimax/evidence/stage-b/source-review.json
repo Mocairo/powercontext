@@ -1,14 +1,14 @@
 {
-  "reviewer": "Codex independent review agent and primary agent",
   "result": "passed",
+  "model_response_id": "0740e917653d73b3990582d5c8b75a32",
+  "response_model": "MiniMax-M3.1-Flash",
   "model_output_matches_delivered_code": true,
-  "code_sha256": "77448e765557902f54e1ebbdd52e86db429ba5d5f49137ec30130ec72f87fc55",
+  "code_sha256": "9d2f06451a2bea0a94edc71dea9575310dec6f429b411c0573072de83cd7d7bd",
   "business_code_repairs": [],
   "checks": [
-    "Real ticket data filtering; no test ID hardcoding",
-    "Owner/status AND; stable numeric id order",
-    "Strict status validation; ValueError/CLI exit2",
-    "No extra filesystem, network or subprocess side effects",
-    "Original acceptance tests unchanged from stage A"
+    "real ticket data filtering",
+    "owner/status conjunction and numeric ordering",
+    "strict validation and CLI exit 2",
+    "no acceptance-test or extra-file modification"
   ]
 }

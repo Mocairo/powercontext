@@ -1,6 +1,6 @@
 # MiniMax 协议核对与真实接入
 
-核对日期：2026-10-29。以下链接为协议依据；实际模型调用另见 `stage-b/attempt-02/`。
+核对日期：2026-11-09。以下链接为协议依据；实际模型调用另见 `stage-b/attempt-03/`，response_id 为 `0740e917653d73b3990582d5c8b75a32`，response_model 为 `M3.1-Flash`。
 
 - [MiniMax 国内 OpenAI SDK](https://platform.minimax.cn/docs/api-reference/text-openai-api)：国内 base URL 为 `https://api.minimax.cn/v1`，本次真实运行使用该地址和 `MiniMax-M3.1-Flash`。
 - [MiniMax OpenAI SDK](https://platform.minimax.io/docs/api-reference/text-openai-api)：兼容 Chat Completions，国际站 base URL 为 `https://api.minimax.io/v1`，响应的最终文本在 `choices[0].message.content`。`max_tokens` 是包括 thinking 在内的输出上限；旧模型可能把 thinking 放在 `<think>` 标签内，新模型也可能提供 `reasoning_content`。

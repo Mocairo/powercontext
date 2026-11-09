@@ -22,4 +22,4 @@ minimax-sdd = "minimax_sdd.cli:main"
 testpaths = ["tests"]
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/minimax_sdd"]
+packages = ["src/minimax_sdd", "src/sdd_context"]

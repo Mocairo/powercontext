@@ -1,120 +1,60 @@
 {
-  "status": "local_acceptance_complete",
-  "official_platform_evaluation": "not_run",
+  "official_score": null,
+  "all_required_gates_passed": true,
+  "local_eligible_points": 20,
+  "gates": {
+    "runnable": true,
+    "minimax_participated": true,
+    "context_correct": true,
+    "database_used": true,
+    "state_reused": true,
+    "effective_code_change": true
+  },
   "model": "MiniMax-M3.1-Flash",
-  "six_conditions": {
-    "能够运行": {
-      "status": "locally_verified",
-      "evidence": "reproduction/verification.json"
-    },
-    "MiniMax实际参与": {
-      "status": "locally_verified",
-      "evidence": "attempt-02/minimax-final-output.json"
-    },
-    "上下文正确": {
-      "status": "locally_verified",
-      "evidence": "attempt-02/context.json"
-    },
-    "数据库实际参与": {
-      "status": "locally_verified",
-      "evidence": "attempt-02/context.json"
-    },
-    "状态能够复用": {
-      "status": "locally_verified",
-      "evidence": "context-final.json"
-    },
-    "代码修改有效": {
-      "status": "locally_verified",
-      "evidence": "tests-after/results.json"
-    }
-  },
-  "business_tests": {
-    "regression": {
-      "exit_code": 0,
-      "tests": 9,
-      "passed": 9,
-      "failures": 0,
-      "errors": 0,
-      "skipped": 0
-    },
-    "target": {
-      "exit_code": 0,
-      "tests": 20,
-      "passed": 20,
-      "failures": 0,
-      "errors": 0,
-      "skipped": 0
-    }
-  },
-  "fresh_live_reproduction_tests": {
-    "regression": {
-      "exit_code": 0,
-      "tests": 9,
-      "passed": 9,
-      "failures": 0,
-      "errors": 0,
-      "skipped": 0
-    },
-    "target": {
-      "exit_code": 0,
-      "tests": 20,
-      "passed": 20,
-      "failures": 0,
-      "errors": 0,
-      "skipped": 0
-    }
-  },
-  "module_tests": {
-    "passed": 44,
-    "exit_code": 0,
-    "warnings": 5,
-    "skipped": 0
-  },
-  "test_sha256_unchanged": {
+  "response_id": "0740e917653d73b3990582d5c8b75a32",
+  "before_sha256": "a3ff1f4c9e24eea67f0e60842fec1d6fbdaffdbeb835c484a534759de36a7092",
+  "after_sha256": "9d2f06451a2bea0a94edc71dea9575310dec6f429b411c0573072de83cd7d7bd",
+  "test_sha256": {
     "tests/conftest.py": "0146973a18b2d21f5a2e4d4de56383d17c06f03cfbd37e9fddea06af4a333e91",
     "tests/test_regression.py": "94ad7bd4346a5589c9e78d165d3e5970802a9858c31824c4c814b4ee7fb0508c",
     "tests/test_target.py": "d4340e834370559ae885ef09a2fedab5dfb96bbaffe299288fdd04dc39403545"
   },
-  "reference_code_sha256": "77448e765557902f54e1ebbdd52e86db429ba5d5f49137ec30130ec72f87fc55",
-  "successful_model_responses": 4,
-  "successful_generation_calls": 2,
-  "connection_timeout_attempts": 1,
-  "total_client_attempts": 5,
-  "successful_response_token_usage": {
-    "prompt_tokens": 22018,
-    "completion_tokens": 10839,
-    "total_tokens": 32857
+  "fresh_run": {
+    "command": [
+      "/home/lijx/workspace/oceanbase/powercontext-minimax/minimax/.venv/bin/python",
+      "-m",
+      "minimax_sdd.cli",
+      "stage-a",
+      "--run-dir",
+      "/tmp/minimax-review-fw78h74l/stage-a"
+    ],
+    "exit_code": 0,
+    "stage_a_status": "complete",
+    "old_state_copied": false,
+    "new_database_and_state": true
   },
-  "business_repairs": [],
-  "codex_changes": "Stage A context/validation infrastructure; environment proxy and SOCKS integration fix; evidence packaging and source review. Delivered ticket_tool.py exactly equals the first successful live model output.",
-  "final_state_writer": {
-    "backend": "PowerContext 1.4.1 / SQLite",
-    "scope_id": "scp_1d9kfz4na7fwn5b3axwjgqd49z",
-    "scope_name": "ticket-status-filter",
-    "family": "atomic-memory",
-    "artifact_id": "art_7336ff192bf7438cbc3a196f531a0220",
-    "revision": 5,
-    "content_digest": "sha256:f58d1a6a2e2e9c0ed512fe60c413a28a08f3a4932e8e623d2b4aae4ec4aab337",
-    "client_instance_id": "b23f3054751e4a13a57c98c8950e166c",
-    "pid": 4097681
+  "business_tests": "business-tests.log",
+  "model_receipt": "evidence/stage-b/attempt-03",
+  "no_live_request_made_by_audit": true,
+  "local_state": {
+    "stage": "local_acceptance_complete",
+    "next_action": "submit_on_competition_platform",
+    "writer_revision": 3,
+    "reader_revision": 3,
+    "same_artifact": true,
+    "different_process_and_client": true
   },
-  "final_state_reader": {
-    "backend": "PowerContext 1.4.1 / SQLite",
-    "scope_id": "scp_1d9kfz4na7fwn5b3axwjgqd49z",
-    "scope_name": "ticket-status-filter",
-    "family": "atomic-memory",
-    "artifact_id": "art_7336ff192bf7438cbc3a196f531a0220",
-    "revision": 5,
-    "content_digest": "sha256:f58d1a6a2e2e9c0ed512fe60c413a28a08f3a4932e8e623d2b4aae4ec4aab337",
-    "client_instance_id": "b2457e94c904404eb3f079032f243521",
-    "pid": 4097977
+  "live_run": {
+    "attempt": "evidence/stage-b/attempt-03",
+    "status": "tests_passed_pending_review",
+    "response_id": "0740e917653d73b3990582d5c8b75a32",
+    "response_model": "MiniMax-M3.1-Flash",
+    "requests_attempted": 2,
+    "business_repairs": []
   },
-  "next_action": "submit_on_competition_platform",
-  "git_origin": "https://github.com/Mocairo/powercontext.git",
-  "branch": "codex/minimax-sdd",
-  "remote_push_status": "blocked: GitHub HTTPS credentials unavailable; dry-run exit 128",
+  "official_platform_submission": false,
   "remaining": [
-    "Authenticate GitHub and push normally",
-    "User performs competition platform submission and obtains official result"
+    "Push branch after GitHub authentication is available",
+    "Submit branch/commit through competition platform and record official score"
   ]
 }

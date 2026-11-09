@@ -1,0 +1,5 @@
+powercontext[builtin]==1.4.1
+pylibseekdb==1.4.0.post2
+pymysql==1.2.0
+httpx[socks]==0.28.1
+pytest==9.0.2

@@ -1,0 +1,39 @@
+{
+  "official_score": null,
+  "all_required_gates_passed": true,
+  "local_eligible_points": 20,
+  "gates": {
+    "runnable": true,
+    "minimax_participated": true,
+    "context_correct": true,
+    "database_used": true,
+    "state_reused": true,
+    "effective_code_change": true
+  },
+  "model": "MiniMax-M3.1-Flash",
+  "response_id": "0740e917653d73b3990582d5c8b75a32",
+  "before_sha256": "a3ff1f4c9e24eea67f0e60842fec1d6fbdaffdbeb835c484a534759de36a7092",
+  "after_sha256": "9d2f06451a2bea0a94edc71dea9575310dec6f429b411c0573072de83cd7d7bd",
+  "test_sha256": {
+    "tests/conftest.py": "0146973a18b2d21f5a2e4d4de56383d17c06f03cfbd37e9fddea06af4a333e91",
+    "tests/test_regression.py": "94ad7bd4346a5589c9e78d165d3e5970802a9858c31824c4c814b4ee7fb0508c",
+    "tests/test_target.py": "d4340e834370559ae885ef09a2fedab5dfb96bbaffe299288fdd04dc39403545"
+  },
+  "fresh_run": {
+    "command": [
+      "/home/lijx/workspace/oceanbase/powercontext-minimax/minimax/.venv/bin/python",
+      "-m",
+      "minimax_sdd.cli",
+      "stage-a",
+      "--run-dir",
+      "/tmp/minimax-review-56mxa9q1/stage-a"
+    ],
+    "exit_code": 0,
+    "stage_a_status": "complete",
+    "old_state_copied": false,
+    "new_database_and_state": true
+  },
+  "business_tests": "business-tests.log",
+  "model_receipt": "evidence/stage-b/attempt-03",
+  "no_live_request_made_by_audit": true
+}
